@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  @media only screen and (max-width: 600px) { 
+      display: flex;
+
+      :nth-child(2) {
+        width: 10%;
+      }
+
+      :nth-child(3) {
+        width: 90%;
+      }
+  }
+}

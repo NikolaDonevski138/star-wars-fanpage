@@ -1,0 +1,40 @@
+.burgerMenuContainer {
+    .sideBarContainer {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        .cancelIcon {
+            align-self: flex-end;
+            color: white;
+            padding-right: 20px;
+        }
+
+        .cancelIcon:hover {
+            cursor: pointer;
+        }
+        
+        .linkItem {
+            text-align: center;
+            color:white;
+            text-decoration: none;
+            font-size: 18px;
+            width: 100%;
+            padding: 0;
+            padding-top: 10px;
+            display: block;
+        }
+    }
+
+    @media only screen and (min-width: 600px) { 
+        display: none;
+    }
+}
