@@ -10,7 +10,11 @@ export const BurgerMenu = () => {
     
     return (
         <div className={style.burgerMenuContainer}>
-            <p onClick={() => setOpen(!isOpen)}>Burger menu</p>
+            <div className={style.burgerMenu} onClick={() => setOpen(!isOpen)}>
+              <div className={style.burgerMenuItem}></div>
+              <div className={style.burgerMenuItem}></div>
+              <div className={style.burgerMenuItem}></div>
+            </div>
             {isOpen ? (
               <div className={style.sideBarContainer}>
                 <p className={style.cancelIcon} onClick={() => {setOpen(false)}}>X</p>

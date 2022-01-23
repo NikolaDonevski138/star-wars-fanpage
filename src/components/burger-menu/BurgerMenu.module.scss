@@ -1,8 +1,22 @@
 .burgerMenuContainer {
+    display: block;
+
+    .burgerMenu {
+        cursor: pointer;
+    }
+    
+    .burgerMenuItem {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        border-radius: 3px;
+        margin: 6px 0;
+    }
+
     .sideBarContainer {
         height: 100%;
-        width: 160px;
-        position: fixed;
+        width: 120px;
+        position: absolute;
         z-index: 1;
         top: 0;
         left: 0;

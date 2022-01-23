@@ -4,15 +4,61 @@
 }
 
 .app {
+
   @media only screen and (max-width: 600px) { 
       display: flex;
-
-      :nth-child(2) {
-        width: 10%;
+      flex-direction: column;
+      padding: 10px 20px;
+      
+      .logoLgScreens {
+        display: none;
       }
 
-      :nth-child(3) {
-        width: 90%;
+      .header {
+        display: flex;
+        
+        .logoSmScreens {
+          width: 100%;
+          text-align: center;
+        }
+
+      }
+
+      .body {
+        padding-left: 5;
+        position: relative;
       }
   }
+
+  @media only screen and (min-width: 600px) { 
+    .header {
+      .logoSmScreens {
+        display: none;
+      }
+    }
+
+    // .body {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+  }
 }
+
+.burgerOpened {
+  @media only screen and (max-width: 600px) { 
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+
+    .logoLgScreens {
+      display: none;
+    }
+
+    .body {
+     padding-left: 5;
+    }
+  }
+}
+
