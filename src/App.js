@@ -7,6 +7,7 @@ import { Navbar } from './components/navbar/Navbar';
 import { BurgerMenu } from './components/burger-menu/BurgerMenu';
 
 const Film = React.lazy(() => import("./pages/film-page/Films"));
+const FilmDetails = React.lazy(() => import("./pages/film-page/FilmDetail"));
 
 function App() {
 
@@ -34,8 +35,16 @@ function App() {
                 <React.Suspense fallback={<>Loading...</>}>
                   <Film />
                 </React.Suspense>
-              }
-            />
+                }
+              />
+              <Route
+                path="filmdetails"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <FilmDetails />
+                </React.Suspense>
+                }
+              />
           </Routes>
           </div>
       </div>
