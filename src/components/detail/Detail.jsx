@@ -2,18 +2,22 @@ import { useState } from 'react';
 
 import style from './Detail.module.scss';
 import { Planets } from '../planets/Planets';
+import { Starships } from '../starships/starships';
+import { Vehicles } from '../vehicles/vehicles';
+import { Species } from '../species/species';
 
 export const Detail = ({ selectedFilm }) => {
 
   const [isOpenedFilmDescription, setOpenFilmDescription] = useState(false);
   const [isOpenedFilmPlanets, setOpenFilmPlanets] = useState(false);
-  const [isOpenedFilmSpecies, setOpenFilmSpecies] = useState(false);
+  const [isOpenedFilmVehicles, setOpenFilmVehicles] = useState(false);
   const [isOpenedFilmStarships, setOpenFilmStarships] = useState(false);
+  const [isOpenedFilmSpecies, setOpenFilmSpecies] = useState(false);
 
   const { img, title, opening_crawl } = selectedFilm;
   return (
     <div className={style.detailItemContainer}>
-            
+
             {isOpenedFilmDescription ? (
                <div className={style.detailInfo}>
                <h1>{title} : {opening_crawl}</h1>
@@ -37,9 +41,8 @@ export const Detail = ({ selectedFilm }) => {
             )}
 
             {isOpenedFilmStarships ? (
-                            <div className={style.detailInfo}>
-                            <h1>{title} : {opening_crawl}</h1>
-                            <p onClick={() => setOpenFilmStarships(!isOpenedFilmStarships)}>Hide Starships Description</p>
+                          <div onClick={() => setOpenFilmStarships(!isOpenedFilmStarships)} className={style.detailInfo}>
+                          <Starships />
                           </div>
 
             ) : (
@@ -49,15 +52,25 @@ export const Detail = ({ selectedFilm }) => {
             )}
 
 
-            {isOpenedFilmSpecies ? (
-                            <div className={style.detailInfo}>
-                            <h1>{title} : {opening_crawl}</h1>
-                            <p onClick={() => setOpenFilmSpecies(!isOpenedFilmSpecies)}>Hide vehicles Description</p>
-                          </div>
+            {isOpenedFilmVehicles ? (
+                           <div onClick={() => setOpenFilmVehicles(!isOpenedFilmVehicles)} className={style.detailInfo}>
+                            <Vehicles />
+                           </div>
 
             ) : (
               <div className={style.detailInfo}>
-              <p onClick={() => setOpenFilmSpecies(!isOpenedFilmSpecies)}>Explore vehicles in: {title}</p>
+              <p onClick={() => setOpenFilmVehicles(!isOpenedFilmVehicles)}>Explore vehicles in: {title}</p>
+            </div>
+            )}
+
+            {isOpenedFilmSpecies ? (
+                           <div onClick={() => setOpenFilmSpecies(!isOpenedFilmSpecies)} className={style.detailInfo}>
+                            <Species />
+                           </div>
+
+            ) : (
+              <div className={style.detailInfo}>
+              <p onClick={() => setOpenFilmSpecies(!isOpenedFilmSpecies)}>Explore species in: {title}</p>
             </div>
             )}
 

@@ -10,7 +10,6 @@ export const Planet = ({ planetInfo }) => {
     climate
   } = planetInfo;
 
-  console.log({planetInfo});
   return (
     <div className={style.planetContainer}>
       <p>Name: {name}</p>

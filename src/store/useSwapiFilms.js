@@ -8,9 +8,11 @@ export const useSwapiFilms = create((set, getState) => ({
     allFilms: [],
     selectedFilm: [],
     selectedFilmPlanets: [],
+    selectedFilmStarships: [],
+    selectedFilmVehicles: [],
+    selectedFilmSpecies: [],
     fetchAllFilms: async () => {
         const response = await swapi().getAllFilms();
-        console.log(response, 'tess')
         set({ allFilms: concatImagesToResponse(response.data.results)})
     },
     fetchFilm: (filmName) => {
@@ -22,8 +24,34 @@ export const useSwapiFilms = create((set, getState) => ({
       }
       const listOfPlanetsBySelectedFilm = getState().selectedFilm?.planets;
       const planets = await swapi(listOfPlanetsBySelectedFilm).getSubjectsBySelectedFilm();
-      console.log(planets, 'planets')
       const mergedResponseWithImages = concatImagesToResponse(planets);
-      set({selectedFilmPlanets: [...mergedResponseWithImages]})
+      set({selectedFilmPlanets: mergedResponseWithImages})
+    },
+    fetchAllStarshipsBySelectedFilm: async() => {
+      if (!getState().selectedFilm.starships.length) {
+        return;
+      }
+      const listOfStarshipsBySelectedFilm = getState().selectedFilm?.starships;
+      const starships = await swapi(listOfStarshipsBySelectedFilm).getSubjectsBySelectedFilm();
+      const mergedResponseWithImages = concatImagesToResponse(starships);
+      set({selectedFilmStarships: mergedResponseWithImages});
+    },
+    fetchAllVehiclesBySelectedFilm: async() => {
+      if (!getState().selectedFilm.vehicles.length) {
+        return;
+      }
+      const listOfVehiclesBySelectedFilm = getState().selectedFilm?.vehicles;
+      const starships = await swapi(listOfVehiclesBySelectedFilm).getSubjectsBySelectedFilm();
+      const mergedResponseWithImages = concatImagesToResponse(starships);
+      set({selectedFilmVehicles: mergedResponseWithImages});
+    },
+    fetchAllSpeciesBySelectedFilm: async() => {
+      if (!getState().selectedFilm.species.length) {
+        return;
+      }
+      const listOfSpeciesBySelectedFilm = getState().selectedFilm?.species;
+      const species = await swapi(listOfSpeciesBySelectedFilm).getSubjectsBySelectedFilm();
+      const mergedResponseWithImages = concatImagesToResponse(species);
+      set({selectedFilmSpecies: mergedResponseWithImages});
     }
 }))
