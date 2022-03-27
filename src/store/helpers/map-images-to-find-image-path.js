@@ -1,13 +1,17 @@
-import { filmImages } from '../../constants/film-images'; 
+import { filmImages } from '../../constants/film-images';
 
-export const mapImagesToFindImagePath = (filmTitle) => {
+export const mapImagesToFindImagePath = (nameOfSubject) => {
 
     const filmImg = filmImages.find((el) => {
-        if(Object.keys(el).find(imgKey => imgKey === filmTitle.toString())) {
+        if(Object.keys(el).find(imgKey => imgKey === nameOfSubject.toString())) {
             return Object.values(el)
         }
         return false;
     })
+
+    if (filmImg === undefined) {
+        return
+    }
 
     const filmImagePath = Object.values(filmImg)[0]
 

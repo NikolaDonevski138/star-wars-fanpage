@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Film = ({film}) => {
     const navigate = useNavigate();
-    
+
     const onNavigate = () => {
         navigate('/filmdetails', {state: film?.title })
     }
@@ -18,5 +18,5 @@ export const Film = ({film}) => {
                 <img className={style.filmImage} src={film.img} alt='img' />
             </div>
         </div>
-    );  
+    );
 }

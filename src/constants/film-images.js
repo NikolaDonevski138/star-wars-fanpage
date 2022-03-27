@@ -7,7 +7,7 @@ import revengeOfTheSith from '../assets/images/films/revenge_of_the_sith.jpg';
 
 export const filmImages = [
     {
-        "A New Hope": newHope  
+        "A New Hope": newHope
     },
     {
         "The Empire Strikes Back": empireStrikesBack,
