@@ -3,11 +3,11 @@ import { useSwapiFilms } from '../../store/useSwapiFilms';
 import { Specie } from './specie';
 
 export const Species = () => {
-  const { fetchAllSpeciesBySelectedFilm, getSelectedFilmSpecies } = useSwapiFilms((state) => ({fetchAllSpeciesBySelectedFilm: state.fetchAllSpeciesBySelectedFilm, getSelectedFilmSpecies : state.selectedFilmSpecies}));
+  const { fetchSelectedFilmSpecies, getSelectedFilmSpecies } = useSwapiFilms((state) => ({fetchSelectedFilmSpecies: state.fetchSelectedFilmSpecies, getSelectedFilmSpecies : state.selectedFilmSpecies}));
 
   useEffect(() => {
-    fetchAllSpeciesBySelectedFilm()
-  }, [fetchAllSpeciesBySelectedFilm])
+    fetchSelectedFilmSpecies()
+  }, [fetchSelectedFilmSpecies])
 
   return getSelectedFilmSpecies.length ? (
     getSelectedFilmSpecies.map((specie, index) => {

@@ -3,14 +3,15 @@ import { useSwapiFilms } from '../../store/useSwapiFilms';
 import { Vehicle } from './vehicle';
 
 export const Vehicles = () => {
-  const { fetchAllVehiclesBySelectedFilm, getSelectedFilmVehicles } = useSwapiFilms((state) => ({fetchAllVehiclesBySelectedFilm: state.fetchAllVehiclesBySelectedFilm, getSelectedFilmVehicles : state.selectedFilmVehicles}));
+
+  const { fetchSelectedFilmVehicles, selectedFilmVehicles } = useSwapiFilms();
 
   useEffect(() => {
-    fetchAllVehiclesBySelectedFilm()
-  }, [fetchAllVehiclesBySelectedFilm])
+    fetchSelectedFilmVehicles()
+  }, [fetchSelectedFilmVehicles])
 
-  return getSelectedFilmVehicles.length ? (
-    getSelectedFilmVehicles.map((vehicle, index) => {
+  return selectedFilmVehicles.length ? (
+    selectedFilmVehicles.map((vehicle, index) => {
       return (<Vehicle key={index} vehicleInfo={vehicle} />)
     })
   ): (

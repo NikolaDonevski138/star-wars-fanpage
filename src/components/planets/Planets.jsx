@@ -3,11 +3,11 @@ import { useSwapiFilms } from '../../store/useSwapiFilms';
 import { Planet } from './planet';
 
 export const Planets = () => {
-  const { fetchPlanetsBySelectedFilm, getSelectedFilmPlanets } = useSwapiFilms((state) => ({fetchPlanetsBySelectedFilm: state.fetchAllPlanetsBySelectedFilm, getSelectedFilmPlanets : state.selectedFilmPlanets}));
+  const { fetchSelectedFilmPlanets, getSelectedFilmPlanets } = useSwapiFilms((state) => ({fetchSelectedFilmPlanets: state.fetchSelectedFilmPlanets, getSelectedFilmPlanets : state.selectedFilmPlanets}));
 
   useEffect(() => {
-    fetchPlanetsBySelectedFilm()
-  }, [fetchPlanetsBySelectedFilm])
+    fetchSelectedFilmPlanets()
+  }, [fetchSelectedFilmPlanets])
 
   return getSelectedFilmPlanets.length ? (
     getSelectedFilmPlanets.map((planet, index) => {

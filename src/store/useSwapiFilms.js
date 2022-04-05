@@ -4,54 +4,38 @@ import { swapi } from '../api/swapi';
 import { concatImagesToResponse } from './helpers/concat-images-to-response';
 import { getFilmDetailsByName } from './helpers/get-film-details-by-name';
 
-export const useSwapiFilms = create((set, getState) => ({
+export const useSwapiFilms = create((set, get) => ({
     allFilms: [],
-    selectedFilm: [],
+    selectedFilm: null,
     selectedFilmPlanets: [],
     selectedFilmStarships: [],
     selectedFilmVehicles: [],
     selectedFilmSpecies: [],
-    fetchAllFilms: async () => {
-        const response = await swapi().getAllFilms();
+    async fetchAllFilms() {
+        const response = await swapi.getAllFilms();
         set({ allFilms: concatImagesToResponse(response.data.results)})
     },
-    fetchFilm: (filmName) => {
-      set({selectedFilm: getFilmDetailsByName(filmName, getState().allFilms)})
+    fetchFilm(filmName) {
+      set({selectedFilm: getFilmDetailsByName(filmName, get().allFilms)})
     },
-    fetchAllPlanetsBySelectedFilm: async() => {
-      if (!getState().selectedFilm.planets.length) {
-        return;
-      }
-      const listOfPlanetsBySelectedFilm = getState().selectedFilm?.planets;
-      const planets = await swapi(listOfPlanetsBySelectedFilm).getSubjectsBySelectedFilm();
-      const mergedResponseWithImages = concatImagesToResponse(planets);
-      set({selectedFilmPlanets: mergedResponseWithImages})
+    async fetchSelectedFilmPlanets() {
+      const { selectedFilm } = get();
+      const planets = await swapi.getSubjectsBySelectedFilm(selectedFilm.planets)
+      set({selectedFilmPlanets: concatImagesToResponse(planets)});
     },
-    fetchAllStarshipsBySelectedFilm: async() => {
-      if (!getState().selectedFilm.starships.length) {
-        return;
-      }
-      const listOfStarshipsBySelectedFilm = getState().selectedFilm?.starships;
-      const starships = await swapi(listOfStarshipsBySelectedFilm).getSubjectsBySelectedFilm();
-      const mergedResponseWithImages = concatImagesToResponse(starships);
-      set({selectedFilmStarships: mergedResponseWithImages});
+    async fetchSelectedFilmStarships() {
+      const { selectedFilm } = get();
+      const starships = await swapi.getSubjectsBySelectedFilm(selectedFilm.starships)
+      set({selectedFilmStarships: concatImagesToResponse(starships)});
     },
-    fetchAllVehiclesBySelectedFilm: async() => {
-      if (!getState().selectedFilm.vehicles.length) {
-        return;
-      }
-      const listOfVehiclesBySelectedFilm = getState().selectedFilm?.vehicles;
-      const starships = await swapi(listOfVehiclesBySelectedFilm).getSubjectsBySelectedFilm();
-      const mergedResponseWithImages = concatImagesToResponse(starships);
-      set({selectedFilmVehicles: mergedResponseWithImages});
+    async fetchSelectedFilmVehicles() {
+      const { selectedFilm } = get();
+      const vehicles = await swapi.getSubjectsBySelectedFilm(selectedFilm.vehicles)
+      set({selectedFilmVehicles: concatImagesToResponse(vehicles)});
     },
-    fetchAllSpeciesBySelectedFilm: async() => {
-      if (!getState().selectedFilm.species.length) {
-        return;
-      }
-      const listOfSpeciesBySelectedFilm = getState().selectedFilm?.species;
-      const species = await swapi(listOfSpeciesBySelectedFilm).getSubjectsBySelectedFilm();
-      const mergedResponseWithImages = concatImagesToResponse(species);
-      set({selectedFilmSpecies: mergedResponseWithImages});
-    }
+    async fetchSelectedFilmSpecies() {
+      const { selectedFilm } = get();
+      const species = await swapi.getSubjectsBySelectedFilm(selectedFilm.species)
+      set({selectedFilmSpecies: concatImagesToResponse(species)});
+    },
 }))
