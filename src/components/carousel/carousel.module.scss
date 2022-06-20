@@ -1,0 +1,28 @@
+.carouselContainer {
+  height: 700px !important;
+  max-width: 100% !important;
+  cursor: pointer !important;
+}
+
+// .carousel-root {
+//   height: 700px !important;
+//   max-width: 100% !important;
+//   cursor: pointer !important;
+// }
+
+
+.videoItem {
+
+  @media only screen and (max-width: 600px) { 
+    height: 200px;
+    // max-width: 100%;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 600px) { 
+    height: 500px;
+    // max-width: 100%;
+    cursor: pointer;
+  }
+
+}

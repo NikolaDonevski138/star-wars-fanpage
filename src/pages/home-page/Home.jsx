@@ -1,10 +1,12 @@
-import style from './Home.module.scss'
+import { CarouselSw } from '../../components/carousel/carousel';
 
 export const Home = () => {
     return (
         <>
-        <h1 className={style.home}>Home Page</h1>
-        <h1>Testtt</h1>
+            <CarouselSw />
+            <p>Alo</p>
+            <p> kako e</p>
+            <p>Sho prajs</p>
         </>
     )
 }

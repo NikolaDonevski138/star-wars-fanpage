@@ -19,7 +19,7 @@ function App() {
         <div className={style.logoLgScreens}>
           <Logo />
         </div>
-          <div className={style.header}>
+           <div className={style.header}>
             <Navbar />
             <BurgerMenu />
             <div className={style.logoSmScreens}>
