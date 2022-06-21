@@ -1,12 +1,15 @@
 import { CarouselSw } from '../../components/carousel/carousel';
+import { Galery } from '../../components/galery/Galery';
+
+import style from './Home.module.scss';
 
 export const Home = () => {
     return (
         <>
             <CarouselSw />
-            <p>Alo</p>
-            <p> kako e</p>
-            <p>Sho prajs</p>
+            <div className={style.body}>
+                <Galery />
+            </div>
         </>
     )
 }

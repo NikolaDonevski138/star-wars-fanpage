@@ -21,10 +21,11 @@ export const Video = ({ video }) => {
     <div className={style.videoContainer}>
           <div className={style.overlay}></div>
           <video
-            ref={videoRef}
             src={video}
             loop
-            controls
+            autoPlay
+            controls={true}
+            muted
             style={{
               width: '100%',
               height: '100%'
