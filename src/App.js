@@ -8,6 +8,7 @@ import { BurgerMenu } from './components/burger-menu/BurgerMenu';
 
 const Film = React.lazy(() => import("./pages/film-page/Films"));
 const FilmDetails = React.lazy(() => import("./pages/film-page/FilmDetail"));
+const BlogDetails = React.lazy(() => import("./components/latest-news-and-blogs/blog-detail"));
 
 function App() {
 
@@ -42,6 +43,14 @@ function App() {
                 element={
                 <React.Suspense fallback={<>Loading....</>}>
                   <FilmDetails />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="blogdetail"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <BlogDetails />
                 </React.Suspense>
                 }
               />
