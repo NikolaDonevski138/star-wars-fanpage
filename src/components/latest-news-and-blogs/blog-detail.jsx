@@ -14,19 +14,23 @@ const BlogDetail = () => {
 
   return getContentForBlog ? (
   <div className={style.BlogDetailContainer}>
-    <div className={style.titleImageContainer}>
-      <img src={getContentForBlog.titleImageContainer} alt="image" />
-    </div>
-    <div className={style.headerContainer}>
-      <p className={style.date}>{getContentForBlog.header.date}</p>
-      <p className={style.title}>{getContentForBlog.header.title}</p>
-      <p className={style.subtitle}>{getContentForBlog.header.subtitle}</p>
-    </div>
-    <div className={style.body}>
-      {getContentForBlog.body.map((el) => {
-          return BlogBody(el);
-      })}
-    </div>
+    <div className={style.contentContainer}>
+      <div className={style.titleImageContainer}>
+        <img src={getContentForBlog.titleImageContainer} alt="image" />
+      </div>
+      <div className={style.bodyContainer}>
+        <div className={style.headerContainer}>
+          <p className={style.date}>{getContentForBlog.header.date}</p>
+          <p className={style.title}>{getContentForBlog.header.title}</p>
+          <p className={style.subtitle}>{getContentForBlog.header.subtitle}</p>
+        </div>
+        <div className={style.bodyItems}>
+          {getContentForBlog.body.map((el) => {
+              return BlogBody(el);
+          })}
+        </div>
+      </div>
+   </div>
   </div>
   ): 'Loading'
 }
