@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { filmImages } from '../../constants/film-images'
 import { Modal } from '../../helpers/ui/modal';
+import { GaleryList } from './galery-list';
 
-import style from './Galery.module.scss';
+import style from './GaleryContainer.module.scss';
 
-export const Galery = () => {
+export const GaleryContainer = () => {
 
   const [ isModalOpen, setOpenModal ] = useState(false);
 
@@ -30,7 +31,7 @@ export const Galery = () => {
         </div>
       </div>
       <Modal handleClose={() => setOpenModal(false)} isOpen={isModalOpen}>
-          This is Modal Content!
+          <GaleryList />
       </Modal>
     </>
   )
