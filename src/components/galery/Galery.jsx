@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { filmImages } from '../../constants/film-images'
+import { Modal } from '../../helpers/ui/modal';
 
 import style from './Galery.module.scss';
 
@@ -28,9 +29,9 @@ export const Galery = () => {
               <div className={style.angleDiv}></div>
         </div>
       </div>
-      {isModalOpen ? (
-        <p>Testtttt</p>
-      ): null}
+      <Modal handleClose={() => setOpenModal(false)} isOpen={isModalOpen}>
+          This is Modal Content!
+      </Modal>
     </>
   )
 }
