@@ -19,9 +19,8 @@ export const BurgerMenu = () => {
               <div className={style.sideBarContainer}>
                 <p className={style.cancelIcon} onClick={() => {setOpen(false)}}>X</p>
                 <Link className={style.linkItem} to="/">Home</Link>
-                <Link className={style.linkItem} to="films">Films</Link>
-                <Link className={style.linkItem} to="test2">Test2</Link>
-                <Link className={style.linkItem} to="test3">Test3</Link>
+                <Link className={style.linkItem} to="films">Legacy Films</Link>
+                <Link className={style.linkItem} to="shop">Shop</Link>
               </div>
             ): null}
         </div>

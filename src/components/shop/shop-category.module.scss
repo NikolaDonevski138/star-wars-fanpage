@@ -1,0 +1,20 @@
+.shopItemContainer {
+  margin-left: 25px;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.imgContainer::after {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  color: #FFF;
+  background-color: red;
+  opacity: .7;
+}
