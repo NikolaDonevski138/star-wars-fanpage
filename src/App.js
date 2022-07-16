@@ -10,6 +10,7 @@ const Film = React.lazy(() => import("./pages/film-page/Films"));
 const FilmDetails = React.lazy(() => import("./pages/film-page/FilmDetail"));
 const BlogDetails = React.lazy(() => import("./components/latest-news-and-blogs/blog-detail"));
 const Shop = React.lazy(() => import('./pages/shop-page/shop'));
+const ShopCategoryList = React.lazy(() => import('./components/shop/shop-category-list'));
 
 function App() {
 
@@ -60,6 +61,14 @@ function App() {
                 element={
                 <React.Suspense fallback={<>Loading....</>}>
                   <Shop />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="shop/shop-category-list"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <ShopCategoryList />
                 </React.Suspense>
                 }
               />

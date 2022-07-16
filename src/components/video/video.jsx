@@ -15,8 +15,6 @@ export const Video = ({ video }) => {
   //   }
   // })
 
-  console.log(videoRef, 'videoRef');
-
   return (
     <div className={style.videoContainer}>
           <div className={style.overlay}></div>

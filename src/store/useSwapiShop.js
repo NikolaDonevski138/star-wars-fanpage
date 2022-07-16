@@ -1,8 +1,9 @@
 import create from 'zustand';
+import { getItemsListForChosenShopCategory } from './helpers/get-items-list-for-chosen-shop-category';
 
 export const useSwapiShop = create((set, get) => ({
   shopCategory: "",
-  imageListForChosenShopCategory: null,
+  itemsListForChosenShopCategory: null,
 
   setShopCategory(shopCategory) {
     set({shopCategory: shopCategory});
@@ -10,8 +11,8 @@ export const useSwapiShop = create((set, get) => ({
 
   getImageListForChosenShopCategory() {
     const { shopCategory } = get();
-    const imageList = getBlogDetailsContentByName(shopCategory);
-    set({imageListForChosenShopCategory: imageList})
+    const imageList = getItemsListForChosenShopCategory(shopCategory);
+    set({itemsListForChosenShopCategory: imageList})
   }
 
 }))

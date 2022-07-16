@@ -10,8 +10,6 @@ const BlogDetail = () => {
     setContentForBlog();
   }, []);
 
-  console.log(getContentForBlog)
-
   return getContentForBlog ? (
   <div className={style.BlogDetailContainer}>
     <div className={style.contentContainer}>
