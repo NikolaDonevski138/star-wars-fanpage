@@ -1,12 +1,20 @@
+import { useSwapiShop } from '../../store/useSwapiShop';
+
 import style from './cart-item.module.scss';
 
-export const CartItem = ({item}) => {
-  
+export const CartItem = ({ item }) => {
+
+  const { removeItemFromChart, removeAllItemsForChosenCategoryFromCart } = useSwapiShop((state) => ({
+    removeItemFromChart: state.removeItemFromChart,
+    removeAllItemsForChosenCategoryFromCart: state.removeAllItemsForChosenCategoryFromCart
+  }))
+
   const {
     image,
     orderedItems,
     price,
     sum,
+    productId
   } = item;
 
   return (
@@ -28,10 +36,10 @@ export const CartItem = ({item}) => {
     </div>
     <div className={style.buttonGroup}>
       <div className={style.removeItem}>
-        <button>Remove Item</button>
+        <button onClick={() => removeItemFromChart(productId)}>Remove Item</button>
       </div>
       <div className={style.removeAllItems}>
-        <button>Remove all items</button>
+        <button onClick={() => removeAllItemsForChosenCategoryFromCart(productId)}>Remove all items</button>
       </div>
     </div>
   </div>

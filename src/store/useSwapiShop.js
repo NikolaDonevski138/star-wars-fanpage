@@ -159,6 +159,63 @@ export const useSwapiShop = create((set, get) => ({
     }
 
     set({itemsAddedToCart: flatten(itemsAddedToCart) })
+  },
+
+  removeItemFromChart(elementId) {
+    const {
+      itemsAddedToCart
+     } = get();
+
+     const selectedItemById = itemsAddedToCart.find(el => el.productId === elementId);
+
+
+     const modifiedItem = {
+      ...selectedItemById,
+      orderedItems: selectedItemById.orderedItems - 1,
+      totalItems: selectedItemById.totalItems + 1,
+      sum: selectedItemById.sum - selectedItemById.price
+    }
+
+
+    const mergedItems = [...itemsAddedToCart.filter((el, index) => el.productId !== elementId), modifiedItem]
+
+
+    const sortedItemsByProductIdAsc = mergedItems.sort((a, b) => a.productId > b.productId ? 1 : -1);
+
+    const itemsInChart = sortedItemsByProductIdAsc.map(el => {
+      return el?.orderedItems;
+    });
+
+    const totalNumInChart = itemsInChart.reduce((previousValue, currentValue) => previousValue + currentValue)
+
+    if (selectedItemById?.orderedItems === 1) {
+      set({itemsAddedToCart: itemsAddedToCart.filter((el, index) => el.productId !== elementId) })
+      set({numberOfItemsAddedToChart: totalNumInChart})
+      return;
+     }
+
+
+    set({numberOfItemsAddedToChart: totalNumInChart})
+    set({itemsAddedToCart: sortedItemsByProductIdAsc })
+  },
+
+  removeAllItemsForChosenCategoryFromCart(elementId) {
+    const {
+      itemsAddedToCart,
+     } = get();
+
+
+     const updatedItem = itemsAddedToCart.filter((el, index) => el.productId !== elementId);
+
+
+     const itemsInChart = updatedItem.map(el => {
+      return el?.orderedItems;
+    });
+
+     const totalNumInChart = itemsInChart.reduce((previousValue, currentValue) => previousValue + currentValue)
+
+     set({numberOfItemsAddedToChart: totalNumInChart})
+     set({itemsAddedToCart: updatedItem })
   }
 
 }))
