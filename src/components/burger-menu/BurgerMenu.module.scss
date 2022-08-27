@@ -4,7 +4,7 @@
     .burgerMenu {
         cursor: pointer;
     }
-    
+
     .burgerMenuItem {
         width: 35px;
         height: 5px;
@@ -35,7 +35,7 @@
         .cancelIcon:hover {
             cursor: pointer;
         }
-        
+
         .linkItem {
             text-align: center;
             color:white;
@@ -48,7 +48,7 @@
         }
     }
 
-    @media only screen and (min-width: 600px) { 
+    @media only screen and (min-width: 600px) {
         display: none;
     }
 }

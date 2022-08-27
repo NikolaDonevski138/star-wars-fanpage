@@ -15,10 +15,10 @@ export const ShopCategoryList = () => {
 
   return itemsListForChosenShopCategory ? (
     <>
-      {itemsListForChosenShopCategory.map((el, index) => {
+      {itemsListForChosenShopCategory.items.map((el, index) => {
         return (
           <div>
-              <ShopCategoryListItem key={index} product={el}/>
+              <ShopCategoryListItem key={index} product={el} elementIndex={index} />
           </div>
         )
       })}

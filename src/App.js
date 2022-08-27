@@ -11,6 +11,7 @@ const FilmDetails = React.lazy(() => import("./pages/film-page/FilmDetail"));
 const BlogDetails = React.lazy(() => import("./components/latest-news-and-blogs/blog-detail"));
 const Shop = React.lazy(() => import('./pages/shop-page/shop'));
 const ShopCategoryList = React.lazy(() => import('./components/shop/shop-category-list'));
+const Cart = React.lazy(() => import('./pages/cart/Cart'));
 
 function App() {
 
@@ -69,6 +70,14 @@ function App() {
                 element={
                 <React.Suspense fallback={<>Loading....</>}>
                   <ShopCategoryList />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="cart"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <Cart />
                 </React.Suspense>
                 }
               />

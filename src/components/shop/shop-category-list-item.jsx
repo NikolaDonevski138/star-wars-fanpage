@@ -1,57 +1,23 @@
-import { useState } from 'react';
+import { useSwapiShop } from '../../store/useSwapiShop'
 
-export const ShopCategoryListItem = ({ product }) => {
+export const ShopCategoryListItem = ({ product, elementIndex }) => {
 
-  const [item, setItemValue] = useState({
-    totalItems: product.totalItems,
-    orderedItems: 0,
-    totalSum: 0
-  });
-
-  const addItem = () => {
-
-    if (item.totalItems === 0) {
-      return;
-    }
-
-    setItemValue({
-      ...item,
-      orderedItems: item.orderedItems + 1,
-      totalItems: item.totalItems - 1,
-      totalSum: item.totalSum + product.price
-    })
-  }
-
-  const removeItem = () => {
-
-    if (item.orderedItems === 0) {
-      return;
-    }
-
-    setItemValue({
-      ...item,
-      orderedItems: item.orderedItems - 1,
-      totalItems: item.totalItems + 1,
-      totalSum: item.totalSum - product.price
-    })
-  }
-
-  const addToChart = () => {
-
-  }
-
-
+  const { setIncreaseOrderItem, setDecreaseOrderItem, addToChart } = useSwapiShop((state) => ({
+    setIncreaseOrderItem: state.setIncreaseOrderItem,
+    setDecreaseOrderItem: state.setDecreaseOrderItem,
+    addToChart: state.addToChart
+  }));
 
   return (
     <>
       <img src={product.image} alt={product.image} />
               <p>Price: {product.price}$</p>
-              <p>Total items {item.totalItems} </p>
-              <p>Ordered items: {item.orderedItems} </p>
-              <p>Total price: {item.totalSum}$ </p>
-              <button onClick={addItem}>Add item</button>
-              <button onClick={removeItem}>Remove Item</button>
-              <button onClick={addToChart}>add to chart</button>
+              <p>Total items {product.totalItems} </p>
+              <p>Ordered items: {product.orderedItems} </p>
+              <p>Total price: {product.sum}$ </p>
+              <button onClick={() => setIncreaseOrderItem(product.productId)}>Add item</button>
+              <button onClick={() => setDecreaseOrderItem(product.productId)}>Remove Item</button>
+              <button onClick={() => addToChart()}>add to chart</button>
     </>
   )
 }
