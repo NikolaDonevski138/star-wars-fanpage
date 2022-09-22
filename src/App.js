@@ -12,6 +12,8 @@ const BlogDetails = React.lazy(() => import("./components/latest-news-and-blogs/
 const Shop = React.lazy(() => import('./pages/shop-page/shop'));
 const ShopCategoryList = React.lazy(() => import('./components/shop/shop-category-list'));
 const Cart = React.lazy(() => import('./pages/cart/Cart'));
+const Payment = React.lazy(() => import('./pages/payment/payment'))
+
 
 function App() {
 
@@ -20,15 +22,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className={`${style.app} ${isBurgerOpened ? style.burgerOpened : '' }`}>
-        <div className={style.logoLgScreens}>
-          <Logo />
-        </div>
            <div className={style.header}>
             <Navbar />
             <BurgerMenu />
-            <div className={style.logoSmScreens}>
-              <Logo />
-            </div>
           </div>
           <div className={style.body}>
             <Routes>
@@ -78,6 +74,14 @@ function App() {
                 element={
                 <React.Suspense fallback={<>Loading....</>}>
                   <Cart />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="payment"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <Payment />
                 </React.Suspense>
                 }
               />

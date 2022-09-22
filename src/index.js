@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import { CssVarsProvider } from '@mui/joy';
+import { extendTheme } from '@mui/joy'
+
+const stripePromise = loadStripe('pk_test_51H9nWJFbaEPEGgwiSNVb1aXCSm21g1ggTPXKpcarnd8nixswzXgqNGh6Hntg9S6mUmQfCquyulNZcoSyZ1mYfkSD00eIVchVhT')
+
+const swTheme = extendTheme({ fontFamily: { body: 'Lato' } })
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CssVarsProvider theme={swTheme} defaultMode='dark'>
+      <Elements stripe={stripePromise}>
+        <App />
+      </Elements>
+    </CssVarsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useSwapiShop } from '../../store/useSwapiShop';
+
 import style from './cart-icon.module.scss';
 
 export const CartIcon = () => {
@@ -10,11 +11,13 @@ export const CartIcon = () => {
     const onNavigate = () => {
         navigate('/cart')
     }
-
+    console.log(numberOfItemsAddedToChart, 'test')
   return (
     <div className={style.cartIconContainer} onClick={onNavigate}>
-      <div>{numberOfItemsAddedToChart}</div>
-      <div>Cart Icon</div>
+      {numberOfItemsAddedToChart > 0 ? (<div>{numberOfItemsAddedToChart}</div>) : null}
+      <div>
+        <img className={style.cartIcon} src="assets/images/shopping_cart_icon/shopping-cart.png" alt="cart" />
+      </div>
     </div>
   )
 }

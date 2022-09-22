@@ -10,16 +10,19 @@ export const useSwapiShop = create((set, get) => ({
   itemsAddedToCart: null,
 
   setShopCategory(shopCategory) {
+    console.log(1);
     set({shopCategory: shopCategory});
   },
 
   getImageListForChosenShopCategory() {
+
     const { shopCategory } = get();
     const imageList = getItemsListForChosenShopCategory(shopCategory);
     set({itemsListForChosenShopCategory: imageList})
   },
 
   setIncreaseOrderItem(elementId) {
+
     let { itemsListForChosenShopCategory } = get();
 
     const selectedItemById = itemsListForChosenShopCategory.items.find((el, index) => {
@@ -95,16 +98,22 @@ export const useSwapiShop = create((set, get) => ({
   },
 
   addToChart() {
+
+    console.log(4);
     const {
        itemsListForShopCategory,
        shopCategory,
        itemsListForChosenShopCategory
     } = get();
+    console.log(itemsListForShopCategory)
+    console.log(shopCategory)
+    console.log(itemsListForChosenShopCategory)
 
     let updatedItemsListForShopCategory = {
       ...itemsListForShopCategory,
       [shopCategory]: itemsListForChosenShopCategory
     }
+
 
     let totalItemsAddedToChart = Object.entries(updatedItemsListForShopCategory).map(el => {
 
@@ -112,16 +121,21 @@ export const useSwapiShop = create((set, get) => ({
         return 0;
       }
 
-      if(el[el.length-1]?.items) {
-        return el[el.length-1]?.items.reduce((currentItem, nextItem) => {
-          return currentItem.orderedItems + nextItem.orderedItems
-        });
+      if(el[el.length-1]?.items.length === 1) {
+        return el[el.length-1]?.items[0].orderedItems
+      }
+
+      if(el[el.length-1]?.items.length > 1) {
+          return el[el.length-1]?.items.reduce((currentItem, nextItem) => {
+            return currentItem.orderedItems + nextItem.orderedItems
+          });
       }
 
       return 0;
     });
 
     let totalOrderToChart = totalItemsAddedToChart.reduce((previousValue, currentValue) => previousValue + currentValue);
+
 
     set({numberOfItemsAddedToChart: totalOrderToChart})
     set({itemsListForShopCategory: updatedItemsListForShopCategory })

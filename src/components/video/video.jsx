@@ -1,12 +1,9 @@
 import { useRef, useEffect } from 'react';
-import { useElementSize } from 'usehooks-ts'
 
 import style from './video.module.scss';
 
 
 export const Video = ({ video }) => {
-
-  const [squareRef, { width, height }] = useElementSize()
   const videoRef = useRef();
 
   // useEffect(() => {
