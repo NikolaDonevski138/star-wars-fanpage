@@ -2,12 +2,15 @@ import * as React from "react";
 import style from './App.module.scss'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from './pages'
-import { Logo } from './components/logo/Logo';
 import { Navbar } from './components/navbar/Navbar';
 import { BurgerMenu } from './components/burger-menu/BurgerMenu';
 
 const Film = React.lazy(() => import("./pages/film-page/Films"));
 const FilmDetails = React.lazy(() => import("./pages/film-page/FilmDetail"));
+const Starships = React.lazy(() => import('./components/starships/starships'));
+const Species = React.lazy(() => import('./components/species/species'));
+const Planets = React.lazy(() => import('./components/planets/Planets'));
+const Vehicles = React.lazy(() => import('./components/vehicles/vehicles'));
 const BlogDetails = React.lazy(() => import("./components/latest-news-and-blogs/blog-detail"));
 const Shop = React.lazy(() => import('./pages/shop-page/shop'));
 const ShopCategoryList = React.lazy(() => import('./components/shop/shop-category-list'));
@@ -42,6 +45,38 @@ function App() {
                 element={
                 <React.Suspense fallback={<>Loading....</>}>
                   <FilmDetails />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="filmdetails/vehicles"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <Vehicles />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="filmdetails/starships"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <Starships />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="filmdetails/planets"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <Planets />
+                </React.Suspense>
+                }
+              />
+              <Route
+                path="filmdetails/species"
+                element={
+                <React.Suspense fallback={<>Loading....</>}>
+                  <Species />
                 </React.Suspense>
                 }
               />

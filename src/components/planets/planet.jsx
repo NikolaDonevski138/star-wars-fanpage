@@ -1,14 +1,7 @@
-import style from './planet.module.scss';
+import style from "./planet.module.scss";
 
 export const Planet = ({ planetInfo }) => {
-
-  const {
-    name,
-    orbital_period,
-    population,
-    terrain,
-    climate
-  } = planetInfo;
+  const { name, orbital_period, population, terrain, climate } = planetInfo;
 
   return (
     <div className={style.planetContainer}>
@@ -18,5 +11,5 @@ export const Planet = ({ planetInfo }) => {
       <p>Terrain: {terrain}</p>
       <p>Climate: {climate}</p>
     </div>
-  )
-}
+  );
+};

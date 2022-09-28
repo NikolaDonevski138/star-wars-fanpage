@@ -1,20 +1,25 @@
-import { useEffect } from 'react';
-import { useSwapiFilms } from '../../store/useSwapiFilms';
-import { Vehicle } from './vehicle';
+import { useEffect } from "react";
+import { useSwapiFilms } from "../../store/useSwapiFilms";
+import { Vehicle } from "./vehicle";
 
-export const Vehicles = () => {
+import style from "./vehicles.module.scss";
 
+const Vehicles = () => {
   const { fetchSelectedFilmVehicles, selectedFilmVehicles } = useSwapiFilms();
 
   useEffect(() => {
-    fetchSelectedFilmVehicles()
-  }, [fetchSelectedFilmVehicles])
+    fetchSelectedFilmVehicles();
+  }, [fetchSelectedFilmVehicles]);
 
   return selectedFilmVehicles.length ? (
-    selectedFilmVehicles.map((vehicle, index) => {
-      return (<Vehicle key={index} vehicleInfo={vehicle} />)
-    })
-  ): (
+    <div className={style.vehiclesContainer}>
+      {selectedFilmVehicles.map((vehicle, index) => {
+        return <Vehicle key={index} vehicleInfo={vehicle} />;
+      })}
+    </div>
+  ) : (
     <p>Loader</p>
-  )
+  );
 };
+
+export default Vehicles;
