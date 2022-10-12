@@ -7,7 +7,7 @@ export const LatestNewsAndBlogs = () => {
       <h1 className={style.title}>Latest News & Blogs</h1>
       <div className={style.blogItemsContainer}>
         <Blog id={'lego_starwars'} />
-        <Blog id={'obi_wan_kenobi'} />
+        <Blog id={'unidos'} />
       </div>
     </div>
   )

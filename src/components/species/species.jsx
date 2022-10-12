@@ -17,7 +17,6 @@ const Species = () => {
   }, [
     fetchSelectedFilmSpecies,
   ]);
-  console.log(getSelectedFilmSpecies, 'speciesss')
 
   return getSelectedFilmSpecies.length ? (
     getSelectedFilmSpecies.map((specie, index) => {

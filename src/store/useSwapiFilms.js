@@ -19,17 +19,32 @@ export const useSwapiFilms = create((set, get) => ({
   fetchFilm(filmName) {
     set({ selectedFilm: getFilmDetailsByName(filmName, get().allFilms) });
   },
+
   async fetchSelectedFilmPlanets() {
     const { selectedFilm } = get();
+
     const planets = await swapi.getSubjectsBySelectedFilm(selectedFilm.planets);
-    set({ selectedFilmPlanets: concatImagesToResponse(planets) });
+
+    set({ selectedFilmPlanets: getImagesForSelectedFilmSubject(
+      concatImagesToResponse(planets),
+      selectedFilm,
+      "planets"
+    ), });
+
   },
+
   async fetchSelectedFilmStarships() {
     const { selectedFilm } = get();
+
     const starships = await swapi.getSubjectsBySelectedFilm(
       selectedFilm.starships
     );
-    set({ selectedFilmStarships: concatImagesToResponse(starships) });
+
+    set({ selectedFilmStarships: getImagesForSelectedFilmSubject(
+      concatImagesToResponse(starships),
+      selectedFilm,
+      "starships"
+    ), });
   },
   async fetchSelectedFilmVehicles() {
     const { selectedFilm } = get();

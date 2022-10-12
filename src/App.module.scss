@@ -3,6 +3,15 @@
   padding: 0;
 }
 
+.appContainerMobileBurgerOpened {
+    display: flex;
+    flex-direction: row;
+}
+
+.hideSideBar {
+  display: none;
+}
+
 .app {
 
   @media only screen and (max-width: 600px) {
@@ -24,10 +33,5 @@
   @media only screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
-
-
-    // .body {
-    //  padding-left: 5;
-    // }
   }
 }

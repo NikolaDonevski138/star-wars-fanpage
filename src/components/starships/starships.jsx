@@ -2,21 +2,23 @@ import { useEffect } from "react";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
 import { Starship } from "./starship";
 
+import style from './starships.module.scss';
+
 const Starships = () => {
-  const { fetchSelectedFilmStarships, getSelectedFilmStarships } =
-    useSwapiFilms((state) => ({
-      fetchSelectedFilmStarships: state.fetchSelectedFilmStarships,
-      getSelectedFilmStarships: state.selectedFilmStarships,
-    }));
+  const { fetchSelectedFilmStarships, selectedFilmStarships } = useSwapiFilms();
 
   useEffect(() => {
     fetchSelectedFilmStarships();
   }, [fetchSelectedFilmStarships]);
 
-  return getSelectedFilmStarships.length ? (
-    getSelectedFilmStarships.map((starship, index) => {
-      return <Starship key={index} starshipInfo={starship} />;
-    })
+  console.log(selectedFilmStarships, 'jeuuuu')
+
+  return selectedFilmStarships.length ? (
+    <div className={style.starshipsContainer}>
+      {selectedFilmStarships.map((starship, index) => {
+        return <Starship key={index} starshipInfo={starship} />;
+      })}
+    </div>
   ) : (
     <p>Loader</p>
   );
