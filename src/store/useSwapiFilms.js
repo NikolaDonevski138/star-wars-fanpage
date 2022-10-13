@@ -12,6 +12,7 @@ export const useSwapiFilms = create((set, get) => ({
   selectedFilmStarships: [],
   selectedFilmVehicles: [],
   selectedFilmSpecies: [],
+
   async fetchAllFilms() {
     const response = await swapi.getAllFilms();
     set({ allFilms: concatImagesToResponse(response.data.results) });
@@ -46,6 +47,7 @@ export const useSwapiFilms = create((set, get) => ({
       "starships"
     ), });
   },
+
   async fetchSelectedFilmVehicles() {
     const { selectedFilm } = get();
 
@@ -61,9 +63,16 @@ export const useSwapiFilms = create((set, get) => ({
       ),
     });
   },
+
   async fetchSelectedFilmSpecies() {
     const { selectedFilm } = get();
     const species = await swapi.getSubjectsBySelectedFilm(selectedFilm.species);
-    set({ selectedFilmSpecies: concatImagesToResponse(species) });
+
+    set({ selectedFilmSpecies: getImagesForSelectedFilmSubject(
+      concatImagesToResponse(species),
+      selectedFilm,
+      "species"
+    ), });
   },
+
 }));

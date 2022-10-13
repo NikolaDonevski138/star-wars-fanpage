@@ -2,26 +2,21 @@ import { useEffect } from "react";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
 import { Specie } from "./specie";
 
-const Species = () => {
-  const {
-    fetchSelectedFilmSpecies,
-    getSelectedFilmSpecies,
-  } = useSwapiFilms((state) => ({
-    fetchSelectedFilmSpecies: state.fetchSelectedFilmSpecies,
-    getSelectedFilmSpecies: state.selectedFilmSpecies,
-  }));
+import style from './species.module.scss';
 
+const Species = () => {
+  const { fetchSelectedFilmSpecies, selectedFilmSpecies } = useSwapiFilms();
 
   useEffect(() => {
     fetchSelectedFilmSpecies();
-  }, [
-    fetchSelectedFilmSpecies,
-  ]);
+  }, [fetchSelectedFilmSpecies]);
 
-  return getSelectedFilmSpecies.length ? (
-    getSelectedFilmSpecies.map((specie, index) => {
-      return <Specie key={index} specieInfo={specie} />;
-    })
+  return selectedFilmSpecies.length ? (
+    <div className={style.speciesContainer}>
+      {selectedFilmSpecies.map((specie, index) => {
+        return <Specie key={index} specieInfo={specie} />;
+      })}
+    </div>
   ) : (
     <p>Loader</p>
   );

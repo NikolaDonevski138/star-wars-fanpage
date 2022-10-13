@@ -1,408 +1,501 @@
-import newHope from "../assets/images/films/new_hope.png";
-import empireStrikesBack from "../assets/images/films/empire_strikes_back.jpg";
-import returnOfTheJedi from "../assets/images/films/return_of_the_jedi.jpg";
-import thePhantomMeance from "../assets/images/films/phantom_meance.jpg";
-import attackOfClones from "../assets/images/films/attack_of_clones.jpg";
-import revengeOfTheSith from "../assets/images/films/revenge_of_the_sith.jpg";
+import { ImagesForSelectedSubject } from "./images-for-selected-subject";
+
+const { species, vehicles, starships, planets } = ImagesForSelectedSubject;
 
 export const imagesForSelectedFilm = {
   "A New Hope": {
     species: [
       {
-        Human: empireStrikesBack,
+        Human: species["Human"].toString(),
       },
       {
-        Droid: empireStrikesBack,
+        Droid: species["Droid"].toString(),
       },
       {
-        Wookie: empireStrikesBack,
+        Wookie: species["Wookie"].toString(),
       },
       {
-        Hutt: empireStrikesBack,
+        Rodian: species["Rodian"].toString(),
+      },
+      {
+        Hutt: species["Hutt"].toString(),
       },
     ],
     vehicles: [
       {
-        "Sand Crawler": empireStrikesBack,
+        "Sand Crawler": vehicles["Sand Crawler"],
       },
       {
-        "T-16 skyhopper": empireStrikesBack,
+        "T-16 skyhopper": vehicles["T-16 skyhopper"],
       },
       {
-        "X-34 landspeeder": empireStrikesBack,
+        "X-34 landspeeder": vehicles["X-34 landspeeder"],
       },
       {
-        "TIE/LN starfighter": empireStrikesBack,
+        "TIE/LN starfighter": vehicles["TIE/LN starfighter"],
       },
     ],
     starships: [
       {
-        "CR90 corvette": empireStrikesBack,
+        "CR90 corvette": starships["CR90 corvette"],
       },
       {
-        "Star Destroyer": empireStrikesBack,
+        "Star Destroyer": starships["Star Destroyer"],
       },
       {
-        "Sentinel-class landing craft": empireStrikesBack,
+        "Sentinel-class landing craft": starships["Sentinel-class landing craft"],
       },
       {
-        "Death Star": empireStrikesBack,
+        "Death Star": starships["Death Star"],
       },
       {
-        "Millennium Falcon": empireStrikesBack,
+        "Millennium Falcon": starships["Millennium Falcon"],
       },
       {
-        "Y-wing": empireStrikesBack,
+        "Y-wing": starships["Y-wing"],
       },
       {
-        "X-wing": empireStrikesBack,
+        "X-wing": starships["X-wing"],
       },
       {
-        "TIE Advanced x1": empireStrikesBack,
+        "TIE Advanced x1": starships["TIE Advanced x1"],
       },
     ],
     planets: [
       {
-        Tatooine: empireStrikesBack,
+        Tatooine: planets["Tatooine"],
       },
       {
-        Alderaan: empireStrikesBack,
+        Alderaan: planets["Alderaan"],
       },
       {
-        "Yavin IV": empireStrikesBack,
+        "Yavin IV": planets["Yavin IV"],
       },
     ],
   },
   "The Empire Strikes Back": {
     species: [
       {
-        Human: empireStrikesBack,
+        Human: species["Human"],
       },
       {
-        Droid: empireStrikesBack,
+        Droid: species["Droid"],
       },
       {
-        Wookie: empireStrikesBack,
+        Wookie: species["Wookie"],
       },
       {
-        Hutt: empireStrikesBack,
+        Hutt: species["Hutt"],
       },
     ],
     vehicles: [
       {
-        "TIE/LN starfighter": empireStrikesBack,
+        "TIE/LN starfighter": vehicles["TIE/LN starfighter"],
       },
       {
-        "Snowspeeder": empireStrikesBack,
+        Snowspeeder: vehicles["Snowspeeder"],
       },
       {
-        "TIE bomber": empireStrikesBack,
+        "TIE bomber": vehicles["TIE bomber"],
       },
       {
-        "TAT-AT": empireStrikesBack,
+        "TAT-AT": vehicles["TAT-AT"],
       },
       {
-        "AT-ST": empireStrikesBack,
+        "AT-ST": vehicles["AT-ST"],
       },
       {
-        "Storm IV Twin-Pod cloud car": empireStrikesBack,
+        "Storm IV Twin-Pod cloud car": vehicles["Storm IV Twin-Pod cloud car"],
       },
     ],
     starships: [
       {
-        "Star Destroyer": empireStrikesBack,
+        "Star Destroyer": starships["Star Destroyer"],
       },
       {
-        "Millennium Falcon": empireStrikesBack,
+        "Millennium Falcon": starships["Millennium Falcon"],
       },
       {
-        "Y-wing": empireStrikesBack,
+        "Y-wing": starships["Y-wing"],
       },
       {
-        "X-wing": empireStrikesBack,
+        "X-wing": starships["X-wing"],
       },
       {
-        "Executor": empireStrikesBack,
+        Executor: starships["Executor"],
       },
       {
-        "Rebel transport": empireStrikesBack,
+        "Rebel transport": starships["Rebel transport"],
       },
       {
-        "Slave 1": empireStrikesBack,
+        "Slave 1": starships["Slave 1"],
       },
       {
-        "Imperial shuttle": empireStrikesBack,
+        "Imperial shuttle": starships["Imperial shuttle"],
       },
       {
-        "EF76 Nebulon-B escort frigate": empireStrikesBack
-      }
+        "EF76 Nebulon-B escort frigate": starships["EF76 Nebulon-B escort frigate"],
+      },
     ],
     planets: [
       {
-        'Hoth': empireStrikesBack,
+        Hoth: planets["Hoth"],
       },
       {
-        'Dagobah': empireStrikesBack,
+        Dagobah: planets["Dagobah"],
       },
       {
-        'Bespin': empireStrikesBack,
+        Bespin: planets["Bespin"],
       },
       {
-        'Ord Mantell': empireStrikesBack
-      }
+        "Ord Mantell": planets["Ord Mantell"],
+      },
     ],
   },
   "Return of the Jedi": {
     species: [
       {
-        Human: empireStrikesBack,
+        Human: species["Human"],
       },
       {
-        Droid: empireStrikesBack,
+        Droid: species["Droid"],
       },
       {
-        Wookie: empireStrikesBack,
+        Wookie: species["Wookie"],
       },
       {
-        Hutt: empireStrikesBack,
+        Hutt: species["Hutt"],
       },
     ],
     vehicles: [
       {
-        "TIE/LN starfighter": empireStrikesBack,
+        "TIE/LN starfighter": vehicles["TIE/LN starfighter"],
       },
       {
-        "TIE bomber": empireStrikesBack,
+        "TIE bomber": vehicles["TIE bomber"],
       },
       {
-        "AT-AT": empireStrikesBack,
+        "AT-AT": vehicles["AT-AT"],
       },
       {
-        "AT-ST": empireStrikesBack,
+        "AT-ST": vehicles["AT-ST"],
       },
       {
-        "Sail barge": empireStrikesBack,
+        "Sail barge": vehicles["Sail barge"],
       },
       {
-        "Bantha-II cargo skiff": empireStrikesBack,
+        "Bantha-II cargo skiff": vehicles["Bantha-II cargo skiff"],
       },
       {
-        "TIE/IN interceptor": empireStrikesBack,
+        "TIE/IN interceptor": vehicles["TIE/IN interceptor"],
       },
       {
-        "Imperial Speeder Bike": empireStrikesBack,
-      }
+        "Imperial Speeder Bike": vehicles["Imperial Speeder Bike"],
+      },
     ],
     starships: [
       {
-        "CR90 corvette": empireStrikesBack,
+        "CR90 corvette": starships["CR90 corvette"],
       },
       {
-        "Star Destroyer": empireStrikesBack,
+        "Star Destroyer": starships["Star Destroyer"],
       },
       {
-        "Millennium Falcon": empireStrikesBack,
+        "Millennium Falcon": starships["Millennium Falcon"],
       },
       {
-        "Y-wing": empireStrikesBack,
+        "Y-wing": starships["Y-wing"],
       },
       {
-        "X-wing": empireStrikesBack,
+        "X-wing": starships["X-wing"],
       },
       {
-        "Executor": empireStrikesBack,
+        Executor: starships["Executor"],
       },
       {
-        "Rebel transport": empireStrikesBack,
+        "Rebel transport": starships["Rebel transport"],
       },
       {
-        "Imperial shuttle": empireStrikesBack,
+        "Imperial shuttle": starships["Imperial shuttle"],
       },
       {
-        "EF76 Nebulon-B escort frigate": empireStrikesBack
+        "EF76 Nebulon-B escort frigate": starships["EF76 Nebulon-B escort frigate"],
       },
       {
-        "Calamari Cruiser": empireStrikesBack
+        "Calamari Cruiser": starships["Calamari Cruiser"],
       },
       {
-        "A-wing": empireStrikesBack
+        "A-wing": starships["A-wing"],
       },
       {
-        "B-wing": empireStrikesBack
-      }
+        "B-wing": starships["B-wing"],
+      },
     ],
     planets: [
       {
-        'Tatooine': empireStrikesBack,
+        Tatooine: planets["Tatooine"],
       },
       {
-        'Dagobah': empireStrikesBack,
+        Dagobah: planets["Dagobah"],
       },
       {
-        'Endor': empireStrikesBack,
+        Endor: planets["Endor"],
       },
       {
-        'Naboo': empireStrikesBack
+        Naboo: planets["Naboo"],
       },
       {
-        'Coruscant': empireStrikesBack
-      }
+        Coruscant: planets["Coruscant"],
+      },
     ],
   },
   "The Phantom Menace": {
     species: [
       {
-        Human: empireStrikesBack,
+        Human: species["Human"],
       },
       {
-        Droid: empireStrikesBack,
+        Droid: species["Droid"],
       },
       {
-        Wookie: empireStrikesBack,
+        Wookie: species["Wookie"],
       },
       {
-        Hutt: empireStrikesBack,
+        Hutt: species["Hutt"],
       },
     ],
     vehicles: [
       {
-        "Vulture Droid": empireStrikesBack,
+        "Vulture Droid": vehicles["Vulture Droid"],
       },
       {
-        "Multi-Troop Transport": empireStrikesBack,
+        "Multi-Troop Transport": vehicles["Multi-Troop Transport"],
       },
       {
-        "Armored Assault Tank": empireStrikesBack,
+        "Armored Assault Tank": vehicles["Armored Assault Tank"],
       },
       {
-        "Single Trooper Aerial Platform": empireStrikesBack,
+        "Single Trooper Aerial Platform": vehicles["Single Trooper Aerial Platform"],
       },
       {
-        "C-9979 landing craft": empireStrikesBack,
+        "C-9979 landing craft": vehicles["C-9979 landing craft"],
       },
       {
-        "Tribubble bongo": empireStrikesBack,
+        "Tribubble bongo": vehicles["Tribubble bongo"],
       },
       {
-        "Sith speeder": empireStrikesBack,
-      }
+        "Sith speeder": vehicles["Sith speeder"],
+      },
     ],
     starships: [
       {
-        "Republic Cruiser": empireStrikesBack,
+        "Republic Cruiser": starships["Republic Cruiser"],
       },
       {
-        "Droid control ship": empireStrikesBack,
+        "Droid control ship": starships["Droid control ship"],
       },
       {
-        "Naboo fighter": empireStrikesBack,
+        "Naboo fighter": starships["Naboo fighter"],
       },
       {
-        "Naboo Royal Starship": empireStrikesBack,
+        "Naboo Royal Starship": starships["Naboo Royal Starship"],
       },
       {
-        "Scimitar": empireStrikesBack,
-      }
+        Scimitar: starships["Scimitar"],
+      },
     ],
     planets: [
       {
-        'Tatooine': empireStrikesBack,
+        Tatooine: planets["Tatooine"],
       },
       {
-        'Naboo': empireStrikesBack,
+        Naboo: planets["Naboo"],
       },
       {
-        'Coruscant': empireStrikesBack,
-      }
+        Coruscant: planets["Coruscant"],
+      },
     ],
   },
   "Attack of the Clones": {
     species: [
       {
-        Human: empireStrikesBack,
+        Human: species["Human"],
       },
       {
-        Droid: empireStrikesBack,
+        Droid: species["Droid"],
       },
       {
-        Wookie: empireStrikesBack,
+        Wookie: species["Wookie"],
       },
       {
-        Hutt: empireStrikesBack,
+        Hutt: species["Hutt"],
       },
     ],
     vehicles: [
       {
-        "Sand Crawler": empireStrikesBack,
+        "Sand Crawler": vehicles["Sand Crawler"],
       },
       {
-        "Zephyr-G swoop bike": empireStrikesBack,
+        "Zephyr-G swoop bike": vehicles["Zephyr-G swoop bike"],
       },
       {
-        "Koro-2 Exodrive airspeeder": empireStrikesBack,
+        "Koro-2 Exodrive airspeeder": vehicles["Koro-2 Exodrive airspeeder"],
       },
       {
-        "XJ-6 airspeeder": empireStrikesBack,
+        "XJ-6 airspeeder": vehicles["XJ-6 airspeeder"],
       },
       {
-        "LAAT/i": empireStrikesBack,
+        "LAAT/i": vehicles["LAAT/i"],
       },
       {
-        "LAAT/c": empireStrikesBack,
+        "LAAT/c": vehicles["LAAT/c"],
       },
       {
-        "AT-TE": empireStrikesBack,
+        "AT-TE": vehicles["AT-TE"],
       },
       {
-        "SPHA": empireStrikesBack,
+        SPHA: vehicles["SPHA"],
       },
       {
-        "Flitknot speeder": empireStrikesBack,
+        "Flitknot speeder": vehicles["Flitknot speeder"],
       },
       {
-        "Neimoidian shuttle": empireStrikesBack
+        "Neimoidian shuttle": vehicles["Neimoidian shuttle"],
       },
       {
-        "Geonosian starfighter": empireStrikesBack
-      }
+        "Geonosian starfighter": vehicles["Geonosian starfighter"],
+      },
     ],
     starships: [
       {
-        "Slave 1": empireStrikesBack,
+        "Slave 1": starships["Slave 1"],
       },
       {
-        "Droid control ship": empireStrikesBack,
+        "Droid control ship": starships["Droid control ship"],
       },
       {
-        "J-type diplomatic barge": empireStrikesBack,
+        "Naboo fighter": starships["Naboo fighter"],
       },
       {
-        "AA-9 Coruscant freighter": empireStrikesBack,
+        "J-type diplomatic barge": starships["J-type diplomatic barge"],
       },
       {
-        "Jedi starfighter": empireStrikesBack,
+        "AA-9 Coruscant freighter": starships["AA-9 Coruscant freighter"],
       },
       {
-        "H-type Nubian yacht": empireStrikesBack
+        "Jedi starfighter": starships["Jedi starfighter"],
       },
       {
-        "Republic Assault ship": empireStrikesBack
+        "H-type Nubian yacht": starships["H-type Nubian yacht"],
       },
       {
-        "Solar Sailer": empireStrikesBack
-      }
+        "Republic Assault ship": starships["Republic Assault ship"],
+      },
+      {
+        "Solar Sailer": starships["Solar Sailer"],
+      },
     ],
     planets: [
       {
-        'Tatooine': empireStrikesBack,
+        Tatooine: planets["Tatooine"],
       },
       {
-        'Naboo': empireStrikesBack,
+        Naboo: planets["Naboo"],
       },
       {
-        'Coruscant': empireStrikesBack,
-      }
+        Coruscant: planets["Coruscant"],
+      },
+      {
+        Kamino: planets["Kamino"],
+      },
+      {
+        Geonosis: planets["Geonosis"],
+      },
     ],
   },
-  // "Revenge of the Sith"
+  "Revenge of the Sith": {
+    species: [
+      {
+        Human: species["Human"],
+      },
+      {
+        Droid: species["Droid"],
+      },
+      {
+        Wookie: species["Wookie"],
+      },
+      {
+        Hutt: species["Hutt"],
+      },
+    ],
+    vehicles: [
+      {
+        "Vulture Droid": vehicles["Vulture Droid"],
+      },
+      {
+        "LAAT/i": vehicles["LAAT/i"],
+      },
+      {
+        "AT-TE": vehicles["AT-TE"],
+      },
+      {
+        "Neimoidian shuttle": vehicles["Neimoidian shuttle"],
+      },
+      {
+        "Tsmeu-6 personal wheel bike": vehicles["Tsmeu-6 personal wheel bike"],
+      },
+      {
+        "Emergency Firespeeder": vehicles["Emergency Firespeeder"],
+      },
+      {
+        "Droid tri-fighter": vehicles["Droid tri-fighter"],
+      },
+      {
+        "Oevvaor jet catamaran": vehicles["Oevvaor jet catamaran"],
+      },
+      {
+        "Raddaugh Gnasp fluttercraft": vehicles["Raddaugh Gnasp fluttercraft"],
+      },
+      {
+        "Clone turbo tank": vehicles["Clone turbo tank"],
+      },
+      {
+        "Corporate Alliance tank droid": vehicles["Corporate Alliance tank droid"],
+      },
+      {
+        "Droid gunship": vehicles["Droid gunship"],
+      },
+      {
+        "AT-RT": vehicles["AT-RT"],
+      },
+    ],
+    starships: [
+      {
+        "Republic Cruiser": starships["Republic Cruiser"],
+      },
+      {
+        "Droid control ship": starships["Droid control ship"],
+      },
+      {
+        "Naboo fighter": starships["Naboo fighter"],
+      },
+      {
+        "Naboo Royal Starship": starships["Naboo Royal Starship"],
+      },
+      {
+        Scimitar: starships["Scimitar"],
+      },
+    ],
+    planets: [
+      {
+        Tatooine: planets["Tatooine"],
+      },
+      {
+        Naboo: planets["Naboo"],
+      },
+      {
+        Coruscant: planets["Coruscant"],
+      },
+    ],
+  },
 };
