@@ -3,7 +3,7 @@ import CardCover from "@mui/joy/CardCover";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 
-import style from "./Film.module.scss";
+import style from "./film.module.scss";
 import { useNavigate } from "react-router-dom";
 
 export const Film = ({ film }) => {

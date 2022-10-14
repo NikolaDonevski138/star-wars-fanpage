@@ -1,4 +1,3 @@
-import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Avatar from "@mui/joy/Avatar";
 import Card from "@mui/joy/Card";

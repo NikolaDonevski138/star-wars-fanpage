@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSwapiShop } from '../../store/useSwapiShop';
 import { CartItem } from './cart-item';
 
-import style from './Cart.module.scss';
+import style from './cart.module.scss';
 
 const Cart = () => {
 

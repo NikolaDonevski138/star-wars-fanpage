@@ -3,7 +3,7 @@ import { filmImages } from '../../constants/film-images'
 import { Modal } from '../../helpers/ui/modal';
 import { GaleryList } from './galery-list';
 
-import style from './GaleryContainer.module.scss';
+import style from './galery-container.module.scss';
 
 export const GaleryContainer = () => {
 

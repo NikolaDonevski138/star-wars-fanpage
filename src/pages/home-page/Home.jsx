@@ -1,8 +1,8 @@
 import { CarouselSw } from '../../components/carousel/carousel';
-import { GaleryContainer } from '../../components/galery/GaleryContainer';
+import { GaleryContainer } from '../../components/galery/galery-container';
 import { LatestNewsAndBlogs } from '../../components/latest-news-and-blogs/latest-news-and-blogs';
 
-import style from './Home.module.scss';
+import style from './home.module.scss';
 
 export const Home = () => {
     return (

@@ -2,17 +2,17 @@ import * as React from "react";
 import style from "./App.module.scss";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from "./pages";
-import { Navbar } from "./components/navbar/Navbar";
-import { BurgerMenu } from "./components/burger-menu/BurgerMenu";
+import { Navbar } from "./components/navbar/navbar";
+import { BurgerMenu } from "./components/burger-menu/burger-menu";
 import { SideBar } from "./components/sidebar/sidebar";
 
 import { useBurgerMenu } from "./store/useBurgerMenu";
 
-const Film = React.lazy(() => import("./pages/film-page/Films"));
-const FilmDetails = React.lazy(() => import("./pages/film-page/FilmDetail"));
+const Film = React.lazy(() => import("./pages/film-page/films"));
+const FilmDetails = React.lazy(() => import("./pages/film-page/film-detail"));
 const Starships = React.lazy(() => import("./components/starships/starships"));
 const Species = React.lazy(() => import("./components/species/species"));
-const Planets = React.lazy(() => import("./components/planets/Planets"));
+const Planets = React.lazy(() => import("./components/planets/planets"));
 const Vehicles = React.lazy(() => import("./components/vehicles/vehicles"));
 const BlogDetails = React.lazy(() =>
   import("./components/latest-news-and-blogs/blog-detail")
@@ -21,22 +21,19 @@ const Shop = React.lazy(() => import("./pages/shop-page/shop"));
 const ShopCategoryList = React.lazy(() =>
   import("./components/shop/shop-category-list")
 );
-const Cart = React.lazy(() => import("./pages/cart/Cart"));
+const Cart = React.lazy(() => import("./pages/cart/cart"));
 const Payment = React.lazy(() => import("./pages/payment/payment"));
 
 function App() {
+  const { isOpened } = useBurgerMenu((state) => ({
+    isOpened: state.isOpened,
+  }));
 
-  const { isOpened } = useBurgerMenu(
-    (state) => ({
-      isOpened: state.isOpened
-    })
-  );
-
-  console.log(isOpened, 'test')
+  console.log(isOpened, "test");
   return (
     <BrowserRouter>
-      <div className={isOpened ? style.appContainerMobileBurgerOpened : ''}>
-        <div className={!isOpened ? style.hideSideBar : ''}>
+      <div className={isOpened ? style.appContainerMobileBurgerOpened : ""}>
+        <div className={!isOpened ? style.hideSideBar : ""}>
           <SideBar />
         </div>
         <div className={style.app}>

@@ -1,6 +1,6 @@
 import { useBurgerMenu } from "../../store/useBurgerMenu";
 
-import style from "./BurgerMenu.module.scss";
+import style from "./burger-menu.module.scss";
 
 export const BurgerMenu = () => {
 

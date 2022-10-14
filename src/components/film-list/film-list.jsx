@@ -1,4 +1,4 @@
-import { Film } from '../film/Film';
+import { Film } from '../film/film';
 import style from './film-list.module.scss';
 
 export const FilmList = ({ allFilms }) => {

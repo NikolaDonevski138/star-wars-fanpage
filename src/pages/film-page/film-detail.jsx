@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
-import { FilmDetail } from "../../components/film-detail/FilmDetail";
+import { FilmDetail } from "../../components/film-detail/film-detail";
 
 import style from "./film-details.module.scss";
 

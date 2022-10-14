@@ -6,9 +6,9 @@ import ListDivider from "@mui/joy/ListDivider";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
 import { CartIcon } from "../cart-icon/cart-icon";
-import { Logo } from "../logo/Logo";
+import { Logo } from "../logo/logo";
 
-import style from "./Navbar.module.scss";
+import style from "./navbar.module.scss";
 
 export const Navbar = () => {
   return (
