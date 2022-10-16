@@ -58,7 +58,7 @@ export const CartItem = ({ item }) => {
           </Box>
           <Box>
             <Avatar
-              nClick={() => removeAllItemsForChosenCategoryFromCart(productId)}
+              onClick={() => removeAllItemsForChosenCategoryFromCart(productId)}
               alt="add to chart"
               src="/assets/images/remove/remove.png"
               size="sm"

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
 import { Vehicle } from "./vehicle";
 
-import style from "./vehicles.module.scss";
+import sharedStyle from '../../helpers/ui/subject-in-chosen-film-container.module.scss';
 
 const Vehicles = () => {
   const { fetchSelectedFilmVehicles, selectedFilmVehicles } = useSwapiFilms();
@@ -12,7 +12,7 @@ const Vehicles = () => {
   }, [fetchSelectedFilmVehicles]);
 
   return selectedFilmVehicles.length ? (
-    <div className={style.vehiclesContainer}>
+    <div className={sharedStyle.subjectContainer}>
       {selectedFilmVehicles.map((vehicle, index) => {
         return <Vehicle key={index} vehicleInfo={vehicle} />;
       })}

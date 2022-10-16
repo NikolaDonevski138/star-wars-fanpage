@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
 import { Specie } from "./specie";
 
-import style from './species.module.scss';
+import sharedStyle from '../../helpers/ui/subject-in-chosen-film-container.module.scss';
 
 const Species = () => {
   const { fetchSelectedFilmSpecies, selectedFilmSpecies } = useSwapiFilms();
@@ -12,7 +12,7 @@ const Species = () => {
   }, [fetchSelectedFilmSpecies]);
 
   return selectedFilmSpecies.length ? (
-    <div className={style.speciesContainer}>
+    <div className={sharedStyle.subjectContainer}>
       {selectedFilmSpecies.map((specie, index) => {
         return <Specie key={index} specieInfo={specie} />;
       })}

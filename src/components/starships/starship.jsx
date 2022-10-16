@@ -4,7 +4,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import Typography from "@mui/joy/Typography";
 import Box from '@mui/joy/Box'
 
-import style from './starship.module.scss';
+import sharedStyle from '../../helpers/ui/subject-in-chosen-film.module.scss';
 
 export const Starship = ({ starshipInfo }) => {
 
@@ -20,8 +20,8 @@ export const Starship = ({ starshipInfo }) => {
   } = starshipInfo;
 
   return (
-    <div className={style.starshipContainer}>
-      <Card className={style.card} variant="outlined" sx={{ minWidth: 320 }}>
+    <div className={sharedStyle.subjectItemContainer}>
+      <Card className={sharedStyle.card} variant="outlined" sx={{ minWidth: 320 }}>
         <CardOverflow>
           <AspectRatio ratio="2">
             <img src={img} alt="" />

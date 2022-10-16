@@ -4,7 +4,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import Typography from "@mui/joy/Typography";
 import Box from '@mui/joy/Box'
 
-import style from './vehicle.module.scss';
+import sharedStyle from '../../helpers/ui/subject-in-chosen-film.module.scss';
 
 export const Vehicle = ({ vehicleInfo }) => {
   const {
@@ -18,8 +18,8 @@ export const Vehicle = ({ vehicleInfo }) => {
   } = vehicleInfo;
 
   return (
-    <div className={style.vehicleContainer}>
-      <Card className={style.card} variant="outlined" sx={{ minWidth: 320 }}>
+    <div className={sharedStyle.subjectItemContainer}>
+      <Card className={sharedStyle.card} variant="outlined" sx={{ minWidth: 320 }}>
         <CardOverflow>
           <AspectRatio ratio="2">
             <img src={img} alt="" />
