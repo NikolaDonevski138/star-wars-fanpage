@@ -29,7 +29,6 @@ function App() {
     isOpened: state.isOpened,
   }));
 
-  console.log(isOpened, "test");
   return (
     <BrowserRouter>
       <div className={isOpened ? style.appContainerMobileBurgerOpened : ""}>

@@ -13,19 +13,19 @@ export const CarouselSw = () => {
   return (
             <Carousel
               onChange={(idx) => setSelectedVideo(idx)}
-              class={style.carouselContainer}
+              className={style.carouselContainer}
             >
-                <div class={style.videoItem}>
+                <div className={style.videoItem}>
                   { selectedVideo === 0 ? <Video
                     video={carouselVideos.sw_episode_IX}
                   /> : <div></div> }
                 </div>
-                <div class={style.videoItem}>
+                <div className={style.videoItem}>
                   { selectedVideo === 1 ? <Video
                     video={carouselVideos.sw_episode_IX}
                   /> : <div></div> }
                 </div>
-                <div class={style.videoItem}>
+                <div className={style.videoItem}>
                   { selectedVideo === 2 ? <Video
                     video={carouselVideos.sw_episode_IX}
                   /> : <div></div> }

@@ -16,12 +16,7 @@ export const Film = ({ film }) => {
   return (
     <Card
       onClick={() => onNavigate()}
-      sx={{
-        minHeight: "320px",
-        minWidth: 420,
-        mb: 3,
-        cursor: 'pointer'
-      }}
+      className={style.filmContainer}
     >
       <CardCover>
         <img className={style.img} src={film.img} alt="" />

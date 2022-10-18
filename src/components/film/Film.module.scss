@@ -1,10 +1,22 @@
+@import "../../helpers/ui/mixins.module.scss";
+
+.filmContainer {
+  width: 100%;
+  height: 270px;
+  @include media-min-width(601px) {
+    height: 320px;
+    width: 520px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+}
+
 .img {
-    padding: 50px;
-    background-color: green;
-    transition: transform .2s; /* Animation */
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
+  padding: 50px;
+  transition: transform 0.2s; /* Animation */
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
 
 .img :hover {

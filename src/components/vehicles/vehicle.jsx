@@ -19,29 +19,29 @@ export const Vehicle = ({ vehicleInfo }) => {
 
   return (
     <div className={sharedStyle.subjectItemContainer}>
-      <Card className={sharedStyle.card} variant="outlined" sx={{ minWidth: 320 }}>
+      <Card className={sharedStyle.card} sx={{ pb: 3 }} variant="outlined">
         <CardOverflow>
           <AspectRatio ratio="2">
             <img src={img} alt="" />
           </AspectRatio>
         </CardOverflow>
-        <Box sx={{ display: 'flex', flexDirection: 'column'}}>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+        <Box>
+        <Typography level="body1" sx={{ mt: 2, mb: 1 }}>
           Name: {name}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
           Manufacturer: {manufacturer}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
           This vehicle can carry: {passengers} passangers
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
           Maximum atmoshpering speed: {max_atmosphering_speed}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
           Cargo capacity: {cargo_capacity}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
           Consumables: {consumables}
         </Typography>
         </Box>

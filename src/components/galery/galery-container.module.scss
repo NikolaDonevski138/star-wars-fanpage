@@ -1,4 +1,11 @@
+@import "../../helpers/ui/mixins.module.scss";
+
 .galeryContainer {
+
+  @include media-max-width(600px) {
+    width: 100%;
+    display: flex;
+  }
 
   width: 80%;
   display: flex;

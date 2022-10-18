@@ -1,10 +1,49 @@
+@import "../../helpers/ui/mixins.module.scss";
+
 .cartItemContainer {
+  @include media-max-width(900px) {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+
+    .imageContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .bodyContent {
+      margin-top: 130px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
   width: 60%;
+  margin-bottom: 20px;
+
+  .bodyContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imageContainer {
+    width: 70px;
+    height: 70px;
+  }
 
   .img {
     width: inherit;
@@ -13,6 +52,8 @@
 
   .totalItem {
     display: flex;
+    // justify-content: center;
+    // align-items: center;
     margin-right: 15px;
   }
 }

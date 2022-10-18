@@ -16,8 +16,6 @@ export const getImagesForSelectedFilmSubject = (
     return Object.values(getImageForSelectedSubjectIntoFilm);
   };
 
-  console.log(response, 'response')
-
   const preparedResponseWithImagesForSelectedSubject = response.map((resEl) => {
     if (
       resEl.name.toString() ===

@@ -11,26 +11,26 @@ export const Planet = ({ planetInfo }) => {
 
   return (
     <div className={sharedStyle.subjectItemContainer}>
-      <Card variant="outlined" sx={{ minWidth: 320 }}>
+      <Card variant="outlined">
         <CardOverflow>
           <AspectRatio ratio="2">
             <img src={img} alt="" />
           </AspectRatio>
         </CardOverflow>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
-          Name:{name}
+        <Typography level="body1" sx={{ mt: 2, mb: 1 }}>
+          Name: {name}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
-          Orbitrial Period:{orbital_period}
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
+          Orbitrial Period: {orbital_period}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
-          Population:{population}
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
+          Population: {population}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
-          Terrain:{terrain}
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
+          Terrain: {terrain}
         </Typography>
-        <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
-          Climate:{climate}
+        <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
+          Climate: {climate}
         </Typography>
       </Card>
     </div>

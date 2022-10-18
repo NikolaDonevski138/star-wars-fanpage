@@ -4,6 +4,8 @@ import { useSwapiShop } from '../../store/useSwapiShop';
 import { CartItem } from './cart-item';
 
 import style from './cart.module.scss';
+import Button from '@mui/joy/Button';
+import { fontFamily } from '@mui/joy/styles/styleFunctionSx';
 
 const Cart = () => {
 
@@ -30,7 +32,9 @@ const Cart = () => {
           {itemsAddedToCart.map((el, index) => (
             <CartItem key={index} item={el} />
           ))}
-          <button onClick={() => onNavigate()}>Continue with payment</button>
+          <Button sx={{
+            fontFamily: 'roboto'
+          }} onClick={() => onNavigate()}>Continue with payment</Button>
         </>
       ) : <p>No Items Added</p>}
     </div>

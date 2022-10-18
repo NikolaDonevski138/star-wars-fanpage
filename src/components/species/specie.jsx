@@ -10,30 +10,28 @@ export const Specie = ({ specieInfo }) => {
   const { average_height, classification, designation, name, language, img } =
     specieInfo;
 
-  console.log(img, "img");
-
   return (
     <div className={sharedStyle.subjectItemContainer}>
-      <Box sx={{ minHeight: 350 }}>
+      <Box>
         <Card variant="outlined">
           <CardOverflow>
             <AspectRatio>
               <img className={sharedStyle.img} src={img} alt="" />
             </AspectRatio>
           </CardOverflow>
-          <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+          <Typography level="body1" sx={{ mt: 2, mb: 1 }}>
             Average height: {average_height}
           </Typography>
-          <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+          <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
             Classification: {classification}
           </Typography>
-          <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+          <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
             Designation: {designation}
           </Typography>
-          <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+          <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
             Name: {name}
           </Typography>
-          <Typography level="body2" sx={{ mt: 2, mb: 2 }}>
+          <Typography level="body1" sx={{ mt: 1, mb: 1 }}>
             Languague: {language}
           </Typography>
         </Card>

@@ -1,3 +1,5 @@
+@import "../../helpers/ui/mixins.module.scss";
+
 .BlogDetailContainer {
   display: flex;
   flex-direction: column;
@@ -10,7 +12,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 100%;
+  }
+
+  @include media-min-width(1000px) {
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+    }
   }
 }
 
@@ -45,10 +57,16 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      font-size: 2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 20px;
       word-wrap: break-word;
+    }
+
+    @include media-min-width(601px) {
+      .title {
+        font-size: 1.8rem;
+      }
     }
 
     .subtitle {
@@ -59,7 +77,6 @@
   }
 
   .bodyItems {
-    // width: 100%;
-    padding: 0 45px;
+    padding: 40px 45px;
   }
 }

@@ -15,38 +15,33 @@ export const CartItem = ({ item }) => {
         state.removeAllItemsForChosenCategoryFromCart,
     }));
 
-  const { image, orderedItems, price, sum, productId } = item;
+  const { image, orderedItems, sum, productId } = item;
 
   return (
     <>
-      <Card variant="outlined" className={style.cartItemContainer}>
-        <Box sx={{width: 70, height: 70}}>
+      <Card variant="outlined" className={style.cartItemContainer} >
+        <div className={style.imageContainer}>
           <img className={style.img} src={image} alt={image} />
-        </Box>
-        <Box sx={{ display: "flex" }}>
+        </div>
+        <div className={style.bodyContent}>
           <div className={style.totalItem}>
-            <Typography fontSize="lg" level="body3" sx={{ mr: 1 }}>
-              total sum:
-            </Typography>
-            <Typography fontSize="lg" fontWeight="lg">
-              ${sum}
+            <Typography fontSize="lg" level="body1" sx={{ mr: 1 }}>
+              Total sum: ${sum}
             </Typography>
           </div>
           <div className={style.totalItem}>
-            <Typography fontSize="lg" level="body3" sx={{ mr: 1 }}>
-              Ordered items:
-            </Typography>
-            <Typography fontSize="lg" fontWeight="lg">
-              {orderedItems}
+            <Typography fontSize="lg" level="body1" sx={{ mr: 1 }}>
+              Ordered items: {orderedItems}
             </Typography>
           </div>
-        </Box>
+        </div>
         <Box
           sx={{ display: "flex", justifyContent: "flex-end", width: '30%' }}
         >
           <Box sx={{ display: "flex" }}>
             <Avatar
               onClick={() => removeItemFromChart(productId)}
+              className="hover-zoom"
               alt="remove"
               src="/assets/images/minus/minus.png"
               size="sm"
@@ -59,6 +54,7 @@ export const CartItem = ({ item }) => {
           <Box>
             <Avatar
               onClick={() => removeAllItemsForChosenCategoryFromCart(productId)}
+              className="hover-zoom"
               alt="add to chart"
               src="/assets/images/remove/remove.png"
               size="sm"
@@ -70,30 +66,5 @@ export const CartItem = ({ item }) => {
         </Box>
       </Card>
     </>
-    // <div className={style.cartItemContainer}>
-    //   <div className={style.imageContainer}>
-    //     <img className={style.image} src={image} alt="test" />
-    //   </div>
-    //   <div className={style.orderedItems}>
-    //     <p>Ordered Items</p>
-    //     <p>{orderedItems}</p>
-    //   </div>
-    //   <div className={style.sumOfOneItem}>
-    //     <p>Price of unit</p>
-    //     <p>{price}$</p>
-    //   </div>
-    //   <div className={style.totalSum}>
-    //     <p>Total Sum</p>
-    //     <p>{sum}$</p>
-    //   </div>
-    //   <div className={style.buttonGroup}>
-    //     <div className={style.removeItem}>
-    //       <button onClick={() => removeItemFromChart(productId)}>Remove Item</button>
-    //     </div>
-    //     <div className={style.removeAllItems}>
-    //       <button onClick={() => removeAllItemsForChosenCategoryFromCart(productId)}>Remove all items</button>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };

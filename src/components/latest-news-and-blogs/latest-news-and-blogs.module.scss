@@ -1,10 +1,6 @@
 .latestNewsAndBlogsContainer {
-  width: 80%;
+  width: 100%;
   margin-top: 45px;
-
-  @media only screen and (max-width: 601px) {
-    width: 100%;
-  }
 }
 
 .title {

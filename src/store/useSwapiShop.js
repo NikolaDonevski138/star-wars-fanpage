@@ -8,9 +8,9 @@ export const useSwapiShop = create((set, get) => ({
   itemsListForShopCategory: getItemsListForShopCategory(),
   numberOfItemsAddedToChart: 0,
   itemsAddedToCart: null,
+  totalPriceForPaymentInChart: 0,
 
   setShopCategory(shopCategory) {
-    console.log(1);
     set({shopCategory: shopCategory});
   },
 
@@ -99,15 +99,11 @@ export const useSwapiShop = create((set, get) => ({
 
   addToChart() {
 
-    console.log(4);
     const {
        itemsListForShopCategory,
        shopCategory,
        itemsListForChosenShopCategory
     } = get();
-    console.log(itemsListForShopCategory)
-    console.log(shopCategory)
-    console.log(itemsListForChosenShopCategory)
 
     let updatedItemsListForShopCategory = {
       ...itemsListForShopCategory,
@@ -226,10 +222,20 @@ export const useSwapiShop = create((set, get) => ({
       return el?.orderedItems;
     });
 
-     const totalNumInChart = itemsInChart.reduce((previousValue, currentValue) => previousValue + currentValue)
+     const totalNumInChart = itemsInChart.length ? itemsInChart.reduce((previousValue, currentValue) => previousValue + currentValue) : 0
 
      set({numberOfItemsAddedToChart: totalNumInChart})
      set({itemsAddedToCart: updatedItem })
+  },
+
+  setTotalPriceForPayments() {
+    const { itemsAddedToCart } = get();
+
+    const calcTotalSumOfItemsInCart = itemsAddedToCart.map((el) => {
+      return el.sum
+    }).reduce((prevValue, currValue) => prevValue + currValue);
+
+    set({totalPriceForPaymentInChart: calcTotalSumOfItemsInCart})
   }
 
 }))

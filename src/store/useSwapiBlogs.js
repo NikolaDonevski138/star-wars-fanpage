@@ -4,9 +4,11 @@ import { getBlogDetailsContentByName } from './helpers/get-blog-details-content-
 export const useSwapiBlogs = create((set, get) => ({
     blogId: "",
     contentForBlog: null,
+
     setBlogId(blogId) {
       set({blogId: blogId});
     },
+
     setContentForBlog() {
       const { blogId } = get();
       const content = getBlogDetailsContentByName(blogId);

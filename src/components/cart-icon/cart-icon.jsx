@@ -11,7 +11,7 @@ export const CartIcon = () => {
     const onNavigate = () => {
         navigate('/cart')
     }
-    console.log(numberOfItemsAddedToChart, 'test')
+
   return (
     <div className={style.cartIconContainer} onClick={onNavigate}>
       {numberOfItemsAddedToChart > 0 ? (<div>{numberOfItemsAddedToChart}</div>) : null}

@@ -9,6 +9,7 @@ import { CartIcon } from "../cart-icon/cart-icon";
 import { Logo } from "../logo/logo";
 
 import style from "./navbar.module.scss";
+import { height } from "@mui/system";
 
 export const Navbar = () => {
   return (
@@ -20,6 +21,7 @@ export const Navbar = () => {
           flexGrow: 1,
           display: "flex",
           justifyContent: "space-between",
+          alignItems: 'center',
           mx: 5,
           my: 2,
         }}
@@ -32,9 +34,7 @@ export const Navbar = () => {
             <ListItem role="none">
               <ListItemButton
                 role="menuitem"
-                component="a"
-                href="#horizontal-list"
-                aria-label="Home"
+                sx={{ fontSize: 16 }}
               >
                 <Link className={style.navbarItem} to="/">
                   Home
@@ -45,9 +45,7 @@ export const Navbar = () => {
             <ListItem role="none">
               <ListItemButton
                 role="menuitem"
-                component="a"
-                href="films"
-                aria-label="Home"
+                sx={{ fontSize: 16 }}
               >
                 <Link className={style.navbarItem} to="films">
                   Legacy Films
@@ -58,9 +56,7 @@ export const Navbar = () => {
             <ListItem role="none">
               <ListItemButton
                 role="menuitem"
-                component="a"
-                href="films"
-                aria-label="Home"
+                sx={{ fontSize: 16 }}
               >
                 <Link className={style.navbarItem} to="shop">
                   Shop
@@ -71,9 +67,8 @@ export const Navbar = () => {
             <ListItem role="none">
               <ListItemButton
                 role="menuitem"
-                component="a"
-                href="films"
-                aria-label="Home"
+                sx={{ fontSize: 16 }}
+                className="hover-zoom"
               >
                 <Link className={style.navbarItem} to="cart">
                   <CartIcon />

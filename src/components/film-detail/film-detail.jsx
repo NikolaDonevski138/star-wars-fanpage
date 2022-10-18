@@ -31,24 +31,28 @@ export const FilmDetail = ({ selectedFilm }) => {
         <div className={style.imagesContainer}>
           <img
             onClick={() => navigate("planets", { state: selectedFilm?.title })}
+            className="hover-zoom"
             style={{ marginRight: "15px" }}
             src="/assets/images/planet/planet.png"
             alt="planet"
           />
           <img
             onClick={() => navigate("starships", { state: selectedFilm?.title })}
+            className="hover-zoom"
             style={{ marginRight: "15px" }}
             src="/assets/images/rocket/rocket.png"
             alt="starships"
           />
           <img
             onClick={() => navigate("vehicles", { state: selectedFilm?.title })}
+            className="hover-zoom"
             style={{ marginRight: "15px" }}
             src="/assets/images/vehicle/vehicle.png"
             alt="vehicle"
           />
           <img
             onClick={() => navigate("species", { state: selectedFilm?.title })}
+            className="hover-zoom"
             src="/assets/images/species/species.png"
             alt="species"
           />

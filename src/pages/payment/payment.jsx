@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSwapiShop } from '../../store/useSwapiShop';
 import axios from 'axios';
 import { PaymentInput } from './payment-input';
 
@@ -7,6 +8,8 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import style from './payment.module.scss';
 
 const Payment = () => {
+
+  const { setTotalPriceForPayments, totalPriceForPaymentInChart } = useSwapiShop();
 
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
@@ -18,6 +21,10 @@ const Payment = () => {
   const [postalCode, setPostalCode] = useState('');
   const [city, setCity] = useState('');
   const [address, setAddress] = useState('');
+
+  useEffect(() => {
+    setTotalPriceForPayments();
+  }, []);
 
 
   const handleSubmit = async (e) => {
@@ -31,7 +38,7 @@ const Payment = () => {
         try {
           const { id } = paymentMethod;
           const response = await axios.post("http://localhost:4000/payment", {
-            amount: 1000,
+            amount: totalPriceForPaymentInChart * 100,
             id,
             name: name,
             email: email,

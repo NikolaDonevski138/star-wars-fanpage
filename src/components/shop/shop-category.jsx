@@ -9,20 +9,14 @@ export const ShopCategory = ({ shopItemCategory, image, onClick }) => {
 
   return (
     <div className={style.shopItemContainer} onClick={onClick}>
-      <Card
-        sx={{
-          minHeight: "320px",
-          minWidth: 420,
-          mb: 3,
-        }}
-      >
+      <Card className={style.cardStyle}>
         <CardCover>
           <img src={image} alt="" />
         </CardCover>
         <CardCover
           sx={{
             background:
-              "linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)",
+              "linear-gradient(to top, rgba(0,194,194,0.4), rgba(0,0,0,0) 100px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)",
           }}
         />
         <CardContent sx={{ justifyContent: "flex-end" }}>

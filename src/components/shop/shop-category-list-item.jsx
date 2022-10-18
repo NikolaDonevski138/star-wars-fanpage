@@ -45,6 +45,7 @@ export const ShopCategoryListItem = ({ product, elementIndex }) => {
             <Avatar
               onClick={() => setIncreaseOrderItem(product.productId)}
               alt="add"
+              className="hover-zoom"
               src="/assets/images/plus/plus.png"
               size="sm"
               sx={{
@@ -54,6 +55,7 @@ export const ShopCategoryListItem = ({ product, elementIndex }) => {
             <Avatar
               onClick={() => setDecreaseOrderItem(product.productId)}
               alt="remove"
+              className="hover-zoom"
               src="/assets/images/minus/minus.png"
               size="sm"
               sx={{
@@ -65,6 +67,7 @@ export const ShopCategoryListItem = ({ product, elementIndex }) => {
           <Box>
             <Avatar
               onClick={() => addToChart()}
+              className="hover-zoom"
               alt="add to chart"
               src="/assets/images/shopping_cart_icon/shopping-cart.png"
               size="sm"
