@@ -5,7 +5,6 @@ import { CartItem } from './cart-item';
 
 import style from './cart.module.scss';
 import Button from '@mui/joy/Button';
-import { fontFamily } from '@mui/joy/styles/styleFunctionSx';
 
 const Cart = () => {
 

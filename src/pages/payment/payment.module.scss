@@ -1,5 +1,7 @@
+@import "../../helpers/ui/mixins.module.scss";
+
 .paymentContainer {
-  background-color: #ADD8E6;
+  background-color: black;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -8,9 +10,13 @@
 }
 
 .paymentElements {
+  @include media-max-width(600px) {
+    width: 70%;
+    margin-top: 150px;
+  }
   width: 60%;
   min-height: 60vh;
-  background-color: white;
+  background-color: rgb(30, 30, 30);
   border-radius: 10px;
   padding: 40px 25px;
   display: flex;
@@ -23,8 +29,8 @@
 .paymentElement {
   width: 100%;
   text-align: center;
+  margin-bottom: 7px;
 }
-
 
 .cardElementContainer {
   width: 100%;
@@ -33,28 +39,31 @@
 }
 
 .cardElement {
+  @include media-max-width(1000px) {
+    width: 100%;
+  }
+
   margin-top: 10px;
   border-radius: 5px;
   padding: 10px 20px;
-  border: 1px solid rgba(50, 50, 93, 0.1);
+  border: 2px solid black;
   width: 45%;
   max-height: 44px;
   background: white;
   box-sizing: border-box;
 }
 
-
 input {
-  border: 2px solid #ADD8E6;
+  @include media-max-width(1500px) {
+    width: 80%;
+  }
+  border: 2px solid black;
   border-radius: 5px;
   padding: 10px 20px;
   width: 45%;
   outline: none;
   margin-top: 15px;
-}
-
-input:focus {
-  border: 2px solid red;
+  background-color: white;
 }
 
 .paymentButtonContainer {
@@ -68,7 +77,7 @@ input:focus {
     border-radius: 5px;
     width: 30%;
     padding: 15px;
-    background-color: #ADD8E6;
+    background-color: #add8e6;
   }
 
   .btn:hover {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Button from '@mui/joy/Button';
 import { useSwapiShop } from '../../store/useSwapiShop';
 import axios from 'axios';
 import { PaymentInput } from './payment-input';
@@ -70,51 +71,45 @@ const Payment = () => {
             <div className={style.paymentElements}>
               <div className={style.paymentElement}>
                 <PaymentInput
-                  label="Name"
                   placeholder="Name"
                   type="text"
                 />
               </div>
               <div className={style.paymentElement}>
                 <PaymentInput
-                  label="Email"
                   placeholder="Email"
                   type="email"
                 />
               </div>
-              <div className={style.cardElementContainer}>
-                <CardElement className={style.cardElement} />
-              </div>
               <div className={style.paymentElement}>
                <PaymentInput
-                  label="Country"
                   placeholder="Country"
                   type="text"
                 />
               </div>
               <div className={style.paymentElement}>
                 <PaymentInput
-                  label="Postal Code"
                   placeholder="Postal Code"
                   type="text"
                 />
               </div>
               <div className={style.paymentElement}>
                 <PaymentInput
-                  label="City"
                   placeholder="City"
                   type="text"
                 />
               </div>
               <div className={style.paymentElement}>
                 <PaymentInput
-                  label="Address"
                   placeholder="Address"
                   type="text"
                 />
               </div>
+              <div className={style.cardElementContainer}>
+                <CardElement className={style.cardElement} />
+              </div>
               <div className={style.paymentButtonContainer}>
-                <button className={style.btn}>Pay</button>
+                <Button sx={{minWidth: '150px'}}>Pay</Button>
               </div>
             </div>
           </div>
