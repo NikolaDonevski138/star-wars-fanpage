@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
 import { Specie } from "./specie";
+import { Circles } from "react-loader-spinner";
+import { LoaderWrapper } from "../../helpers/ui/loader-wrapper";
 
-import sharedStyle from '../../helpers/ui/subject-in-chosen-film-container.module.scss';
+import sharedStyle from "../../helpers/ui/subject-in-chosen-film-container.module.scss";
 
 const Species = () => {
   const { fetchSelectedFilmSpecies, selectedFilmSpecies } = useSwapiFilms();
@@ -18,7 +20,9 @@ const Species = () => {
       })}
     </div>
   ) : (
-    <p>Loader</p>
+    <LoaderWrapper>
+      <Circles />
+    </LoaderWrapper>
   );
 };
 

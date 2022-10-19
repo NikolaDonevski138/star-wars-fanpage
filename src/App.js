@@ -1,12 +1,14 @@
 import * as React from "react";
-import style from "./App.module.scss";
+import { useBurgerMenu } from "./store/useBurgerMenu";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Circles } from "react-loader-spinner";
 import { Home } from "./pages";
 import { Navbar } from "./components/navbar/navbar";
 import { BurgerMenu } from "./components/burger-menu/burger-menu";
 import { SideBar } from "./components/sidebar/sidebar";
+import { LoaderWrapper } from "./helpers/ui/loader-wrapper";
 
-import { useBurgerMenu } from "./store/useBurgerMenu";
+import style from "./App.module.scss";
 
 const Film = React.lazy(() => import("./pages/film-page/films"));
 const FilmDetails = React.lazy(() => import("./pages/film-page/film-detail"));
@@ -44,7 +46,13 @@ function App() {
               <Route
                 path="films"
                 element={
-                  <React.Suspense fallback={<>Loading...</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Film />
                   </React.Suspense>
                 }
@@ -52,15 +60,25 @@ function App() {
               <Route
                 path="filmdetails"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
-                    <FilmDetails />
+                  <React.Suspense fallback={<LoaderWrapper>
+                    <Circles />
+                  </LoaderWrapper>}>
+                    <LoaderWrapper>
+                      <FilmDetails />
+                    </LoaderWrapper>
                   </React.Suspense>
                 }
               />
               <Route
                 path="filmdetails/vehicles"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Vehicles />
                   </React.Suspense>
                 }
@@ -68,7 +86,13 @@ function App() {
               <Route
                 path="filmdetails/starships"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Starships />
                   </React.Suspense>
                 }
@@ -76,7 +100,13 @@ function App() {
               <Route
                 path="filmdetails/planets"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Planets />
                   </React.Suspense>
                 }
@@ -84,7 +114,13 @@ function App() {
               <Route
                 path="filmdetails/species"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Species />
                   </React.Suspense>
                 }
@@ -92,7 +128,13 @@ function App() {
               <Route
                 path="blogdetail"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <BlogDetails />
                   </React.Suspense>
                 }
@@ -100,7 +142,13 @@ function App() {
               <Route
                 path="shop"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Shop />
                   </React.Suspense>
                 }
@@ -108,7 +156,13 @@ function App() {
               <Route
                 path="shop/shop-category-list"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <ShopCategoryList />
                   </React.Suspense>
                 }
@@ -116,7 +170,13 @@ function App() {
               <Route
                 path="cart"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Cart />
                   </React.Suspense>
                 }
@@ -124,7 +184,13 @@ function App() {
               <Route
                 path="payment"
                 element={
-                  <React.Suspense fallback={<>Loading....</>}>
+                  <React.Suspense
+                    fallback={
+                      <LoaderWrapper>
+                        <Circles />
+                      </LoaderWrapper>
+                    }
+                  >
                     <Payment />
                   </React.Suspense>
                 }

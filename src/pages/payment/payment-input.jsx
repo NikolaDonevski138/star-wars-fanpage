@@ -3,7 +3,9 @@ import style from './payment.module.scss';
 export const PaymentInput = ({
     label,
     placeholder,
-    type
+    type,
+    handleChange,
+    setter
   }) => {
   return (
     <div className={style.paymentElement}>
@@ -15,6 +17,7 @@ export const PaymentInput = ({
               placeholder={placeholder}
               type={type}
               required
+              onChange={(e) => handleChange(e, setter)}
             />
     </div>
   )

@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useSwapiFilms } from "../../store/useSwapiFilms";
 import { Vehicle } from "./vehicle";
+import { LoaderWrapper } from "../../helpers/ui/loader-wrapper";
 
-import sharedStyle from '../../helpers/ui/subject-in-chosen-film-container.module.scss';
+import sharedStyle from "../../helpers/ui/subject-in-chosen-film-container.module.scss";
 
+import { Circles } from "react-loader-spinner";
 const Vehicles = () => {
   const { fetchSelectedFilmVehicles, selectedFilmVehicles } = useSwapiFilms();
 
@@ -18,7 +20,9 @@ const Vehicles = () => {
       })}
     </div>
   ) : (
-    <p>Loader</p>
+    <LoaderWrapper>
+      <Circles />
+    </LoaderWrapper>
   );
 };
 

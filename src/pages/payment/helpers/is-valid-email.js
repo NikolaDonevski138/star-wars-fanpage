@@ -1,9 +1,8 @@
 export const isValidEmail = (email) => {
 
-  let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  let regex=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/;
 
-  if (!filter.test(email)) {
-    alert('enter valid email');
+  if (!regex.test(email)) {
     return false;
   }
 

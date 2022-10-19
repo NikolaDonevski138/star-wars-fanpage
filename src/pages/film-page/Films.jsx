@@ -17,6 +17,6 @@ const Films = () => {
       <div className={style.filmContainer}>
         <FilmList allFilms={allFilms}/>
       </div>
-  ): 'loading' }
+  ): "asdasd" }
 
 export default Films
