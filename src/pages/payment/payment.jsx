@@ -30,6 +30,7 @@ const Payment = () => {
   const [address, setAddress] = useState("");
 
   const [validationFormMessage, setValidationFormMessage] = useState("");
+  const [isFormSubmited, setFormSubmit] = useState(false);
 
   useEffect(() => {
     setTotalPriceForPayments();
@@ -41,15 +42,14 @@ const Payment = () => {
   };
 
   const handleSubmit = async (e) => {
+
     if (
       !isValidForm([name, email, country, postalCode, city, address])
+      || !isValidEmail(email)
     ) {
       setValidationFormMessage("please populate all fields");
+      setFormSubmit(true);
       return;
-    }
-
-    if (!isValidEmail(email)) {
-      return false;
     }
 
     e.preventDefault();
@@ -110,11 +110,7 @@ const Payment = () => {
                   handleChange={handleChange}
                   setter={setEmail}
                 />
-                <ValidationInputMessage
-                  validationFormMessage={validationFormMessage}
-                  inputStateValue={email}
-                  inputLabel={"email"}
-                />
+                {isFormSubmited && !isValidEmail(email) ? <p style={{ fontSize: "12px", color: "red"}}>Please enter valid email</p>: null}
               </div>
               <div className={style.paymentElement}>
                 <PaymentInput
