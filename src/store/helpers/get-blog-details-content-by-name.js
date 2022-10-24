@@ -1,5 +1,5 @@
 import { blogName } from '../../constants/blog-name';
-import { LegoStarwars } from '../../content/lego_starwars';
+import { GreatestShipStarwars } from '../../content/greatest_ship_starwars';
 import { UnidosStarwars } from '../../content/unidos_starwars';
 
 export const getBlogDetailsContentByName = (blogId) => {
@@ -8,8 +8,8 @@ export const getBlogDetailsContentByName = (blogId) => {
     return null;
   }
 
-  if(blogId === blogName.lego_starwars) {
-    return LegoStarwars();
+  if(blogId === blogName.greatest_ship) {
+    return GreatestShipStarwars();
   }
 
   if(blogId === blogName.unidos) {

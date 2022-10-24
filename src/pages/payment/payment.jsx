@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useSwapiShop } from "../../store/useSwapiShop";
+import { useSwapiShop } from '../../store/useSwapiShop';
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import Button from "@mui/joy/Button";
+import { SuccessfulPayment } from '../../components/successful-payment/successful-payment';
 import { isValidForm } from "./helpers/is-valid-form";
 import { isValidEmail } from "./helpers/is-valid-email";
 import { ValidationInputMessage } from "./validation-input-message";
 import { PaymentInput } from "./payment-input";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import Button from "@mui/joy/Button";
 
 import style from "./payment.module.scss";
 
 const Payment = () => {
+
+  const { removeAllItemsFromCart } = useSwapiShop();
+
   const { setTotalPriceForPayments, totalPriceForPaymentInChart } =
     useSwapiShop();
 
@@ -69,8 +73,8 @@ const Payment = () => {
         });
 
         if (response.data.success) {
-          console.log("Successful payment");
           setSuccess(true);
+          removeAllItemsFromCart();
         }
       } catch (error) {
         console.log("Error", error);
@@ -176,9 +180,7 @@ const Payment = () => {
           </div>
         </form>
       ) : (
-        <div>
-          <h2>You just bought our products !</h2>
-        </div>
+          <SuccessfulPayment />
       )}
     </>
   );

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { filmImages } from '../../constants/film-images'
 import { Modal } from '../../helpers/ui/modal';
 import { GaleryList } from './galery-list';
+import { GaleryListImages } from '../../helpers/galery-list-images/galery-list-images';
 
 import style from './galery-container.module.scss';
 
@@ -18,7 +19,7 @@ export const GaleryContainer = () => {
       <div className={style.galeryContainer}>
         <div className={style.contentContainer} onClick={openModal}>
           <div className={style.imageContainer}>
-            <img className={style.img} src={filmImages[0]['A New Hope']} alt="Skills Galery" />
+            <img className={style.img} src="/assets/images/galery_container/slika.png" alt="Skills Galery" />
           </div>
           <div className={style.descriptionContainer}>
             <p className={style.descriptionItem}>Obi-Wan Kenobi | Skills Gallery</p>

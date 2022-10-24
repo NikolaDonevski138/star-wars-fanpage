@@ -3,15 +3,16 @@ import ReactPlayer from 'react-player'
 
 import style from "./video.module.scss";
 
-export const Video = ({ video }) => {
+export const Video = ({ video, isMuted, filmName }) => {
   const [isPlaying, setPlaying] = useState(false);
+  const [toggleMuted, setToggleMuted] = useState(isMuted)
 
   useEffect(() => {
     setPlaying(false);
   }, [])
 
   const toggleIsPlaying = () => {
-    setPlaying(!isPlaying);
+    setToggleMuted(!toggleMuted);
   }
 
   return (
@@ -21,11 +22,12 @@ export const Video = ({ video }) => {
     >
       <ReactPlayer
         url={video}
-        playing={isPlaying}
+        playing={true}
+        muted={toggleMuted}
         width="100%"
         height="100%"
       />
-      <p className={style.videoTitle}>Test</p>
+      <p className={style.videoTitle}>{filmName}</p>
     </div>
   );
 };

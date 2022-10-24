@@ -1,0 +1,36 @@
+@import "../../helpers/ui/mixins.module.scss";
+
+.successfulPaymentContainer {
+  margin-top: 40px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .imgContainer {
+    width: 100%;
+    position: relative;
+
+    .img {
+      height: 100vh;
+      width: 100%;
+    }
+
+    .content {
+      @include media-max-width(600px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 16px;
+      }
+      position: absolute;
+      text-align: center;
+      top: 70%;
+      left: 35%;
+      color: #ccc;
+      // font-weight: bold;
+      font-family: "roboto";
+      font-size: 30px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
 export const blogName = {
-  lego_starwars : 'lego_starwars',
+  greatest_ship : 'greatest_ship_starwars',
   unidos : 'unidos'
 }
