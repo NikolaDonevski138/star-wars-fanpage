@@ -24,14 +24,14 @@ export const CarouselSw = () => {
                 </div>
                 <div className={style.videoItem}>
                   { selectedVideo === 1 ? <Video
-                    video={carouselVideos.sw_episode_IX}
+                    video={carouselVideos.sw_last_jedi}
                     filmName={"Star Wars: The Last Jedi"}
                     isMuted={false}
                   /> : <div></div> }
                 </div>
                 <div className={style.videoItem}>
                   { selectedVideo === 2 ? <Video
-                    video={carouselVideos.sw_episode_IX}
+                    video={carouselVideos.sw_force_awakens}
                     filmName={"Star Wars: The Force Awakens"}
                     isMuted={false}
                   /> : <div></div> }
